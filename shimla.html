@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Shimla</title>
+    <link rel="stylesheet" href="css/styles_goa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="other">
+        <nav class="top-nav">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#churches">Churches</a></li>
+                    <li><a href="#forts">Forts</a></li>
+                    <li><a href="#temples">Temples</a></li>
+                    <li><a href="#monuments">Monuments</a></li>
+                    <li><a href="#museums">Museums</a></li>
+                    <li><a href="#beaches">Beaches</a></li>
+                    <li><a href="#adventure">Adventure</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#safe">SafetyGuide</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Cart Icon and Dropdown -->
+        <div class="cart-container">
+            <div id="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+        <header class="shimla-header">
+            <h1>Explore Shimla’s Timeless Charm — Where Hills, Heritage, and Happiness Meet!</h1>
+        </header>
+
+        <main class="main-description">
+            <p>Shimla — The Queen of Hills
+                Nestled in the majestic Himalayas, Shimla is a perfect blend of natural beauty, colonial charm, and
+                vibrant culture. With lush green hills, snow-capped peaks, winding trails, and bustling bazaars, this
+                hill station offers an unforgettable escape from the ordinary. Whether it’s serene walks on the Mall
+                Road, panoramic views from the Ridge, thrilling adventures in Kufri, or soaking in rich heritage —
+                Shimla promises every traveler a story to cherish.</p>
+        </main>
+
+        <!-- Temples Section -->
+        <section id="temples" class="culture-section">
+            <h2>Hill Stations</h2>
+            <div class="culture-item">
+                <img src="https://www.holidify.com/images/bgImages/KUFRI.jpg" alt="Kufrihills">
+                <div class="text-content">
+                    <h2>Kufri</h2>
+                    <p>Kufri, a charming hill station located just 20 km from Shimla, is a paradise for nature lovers
+                        and adventure seekers alike. Known for its stunning panoramic views of snow-capped Himalayan
+                        ranges, Kufri offers lush green valleys in summer and transforms into a magical snowy wonderland
+                        in winter.
+
+                        Famous for its Himalayan Nature Park, home to rare wildlife like the Himalayan Monal and snow
+                        leopards, Kufri also attracts visitors with its thrilling skiing slopes and tobogganing tracks
+                        during winter. Horse rides, yak rides, and scenic hiking trails add to the excitement.
+
+                        Whether you’re seeking peaceful moments amidst nature or adrenaline-pumping adventures, Kufri is
+                        a must-visit gem on your Shimla trip.</p>
+                    <p><strong>Cost:</strong>No entry fee </p>
+                    <p><strong>Duration:</strong>All day</p>
+                    <button class="add-to-cart" data-item="Kufri hills" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="https://www.adotrip.com/public/images/areas/5c3db751762d0-Chail%20Waterfalls.jpg"
+                    alt="Chail Hill">
+                <div class="text-content">
+                    <h2>Chail Hills</h2>
+                    <p>Chail, located around 45 km from Shimla, is known for its pristine beauty, majestic views, and
+                        the world’s highest cricket ground. Once the summer capital of the Maharaja of Patiala, it is
+                        surrounded by dense deodar and pine forests. The Chail Palace, lush hiking trails, and peaceful
+                        ambiance make it a perfect getaway from the busy streets of Shimla.
+                        Best Time to Visit: March to June and September to November
+                    </p>
+                    <p><strong>Cost:</strong>No fee</p>
+                    <p><strong>Duration:</strong>All day</p>
+                    <button class="add-to-cart" data-item="Chail Hills" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Churches Section -->
+        <section id="churches" class="culture-section">
+            <h2>Churches</h2>
+            <div class="culture-item">
+                <img src="https://th.bing.com/th/id/OIP.FyAsVM6s63HTpsVm-G28xwHaFj?rs=1&pid=ImgDetMain"
+                    alt=" Christ Church">
+                <div class="text-content">
+                    <h2> Christ Church</h2>
+                    <p>Standing tall on The Ridge, Christ Church is not just a place of worship but an architectural
+                        marvel and a symbol of Shimla’s colonial past. Built in 1857, this neo-Gothic masterpiece
+                        features stunning stained-glass windows representing Faith, Hope, Charity, Fortitude, Patience,
+                        and Humility. The church’s impressive facade, clock tower, and pipe organ are some of the finest
+                        reminders of British architecture in India.
+
+                        By night, the church is beautifully illuminated, adding a magical charm to The Ridge and
+                        becoming a favorite spot for tourists and photographe.</p>
+                    <p><strong>Cost:</strong>Free</p>
+                    <p><strong>Timings:</strong>8 AM TO 6 PM</p>
+                    <button class="add-to-cart" data-item="Christ church" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monuments Section -->
+        <section id="monuments" class="culture-section">
+            <h2>Monuments</h2>
+            <div class="culture-item">
+                <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-rashtrapati-niwasor-viceregal-lodge-shimla-lalam-mandavkar.jpg"
+                    alt="Viceregal Lodge (Rashtrapati Niwas)">
+                <div class="text-content">
+                    <h2>Viceregal Lodge (Rashtrapati Niwas)</h2>
+                    <p>The Rashtrapati Niwas, formerly known as the Viceregal Lodge, is one of Shimla’s most iconic
+                        monuments, echoing the elegance and power of the British Raj. Built in 1888, this majestic
+                        structure served as the summer residence of the British Viceroy of India and has witnessed many
+                        historic decisions shaping modern India.
+
+                        Perched on the Observatory Hill, the Lodge is surrounded by lush, meticulously maintained
+                        gardens and pine forests, offering panoramic views of the surrounding valleys. The building’s
+                        stunning Scottish Baronial architecture, with its grand wood-paneled interiors, elaborate
+                        fireplaces, and elegant staircases, transports visitors to an era of imperial luxury.</p>
+                    <p><strong>Cost:</strong>₹40 (Indian nationals), ₹85 (Foreign tourists)</p>
+
+                    <p><strong>Duration:</strong>10:00 AM – 5:00 PM</p>
+                    <button class="add-to-cart" data-item="Viceregal Lodge" data-cost="40">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="images/gaiety.webp" alt="Gaiety Theatre">
+                <div class="text-content">
+                    <h2>Gaiety Theatre</h2>
+                    <p>The Gaiety Theatre, located on the bustling Mall Road, is one of Shimla’s most iconic and vibrant
+                        cultural landmarks. Built in 1887 during the British era, it is a stunning example of Victorian
+                        Gothic architecture and has been the epicenter of performing arts for more than a century.
+
+                        This historic theatre has hosted numerous legendary personalities, including Rudyard Kipling and
+                        Khuswant Singh, and continues to be a stage for plays, musical performances, cultural shows, and
+                        exhibitions. The beautifully designed auditorium, ornate balconies, and intricate woodwork
+                        transport visitors to the charm and elegance of the colonial era.</p>
+                    <p><strong>Cost:</strong> ₹10 per person</p>
+                    <p><strong>Timings:</strong>9:00 AM – 5:00 PM</p>
+                    <button class="add-to-cart" data-item="Gaiety Theatre" data-cost="10">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="temples" class="culture-section">
+            <h2>Temples of Shimla</h2>
+            <div class="culture-item">
+                <img src="https://th.bing.com/th/id/R.cc8434ee429ead25317cce057121e4f6?rik=F8oLAfbYb5Kjuw&riu=http%3a%2f%2fblogs.himalyantrips.com%2fwp-content%2fuploads%2f2019%2f07%2fJakhoo-temple2.jpg&ehk=9tHvm2JGl2XbGZm%2fj5vMbGipiV7IgqNY7CAEphmA518%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Jakhoo Temple">
+                <div class="text-content">
+                    <h2>Jakhoo Temple</h2>
+                    <p>Situated at the highest point in Shimla, Jakhoo Temple is dedicated to Lord Hanuman. Surrounded
+                        by lush deodar trees, it features a massive Hanuman statue visible from almost anywhere in
+                        Shimla. The temple is not just a spiritual center but also a place to soak in panoramic views of
+                        the entire city and surrounding valleys. The temple also holds great mythological significance
+                        as it is believed that Lord Hanuman stopped here while searching for the Sanjeevani herb during
+                        the Ramayana. Visitors are greeted by playful monkeys along the path and can enjoy serene
+                        moments of prayer with the echoes of temple bells in the background.</p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 5:00 AM – 9:00 PM</p>
+                    <button class="add-to-cart" data-item="Jakhoo Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="https://instaastro.com/blog/wp-content/uploads/2022/04/blog-7.jpg" alt="Tara Devi Temple">
+                <div class="text-content">
+                    <h2>Tara Devi Temple</h2>
+                    <p>Perched on a scenic hilltop around 11 km from Shimla, Tara Devi Temple is dedicated to Goddess
+                        Tara, a manifestation of Goddess Durga. The temple is renowned for its serene atmosphere,
+                        intricate wooden carvings, and breathtaking mountain views. Surrounded by dense pine forests,
+                        this temple offers devotees and visitors a tranquil retreat to meditate and find spiritual
+                        solace. The temple is also a popular spot for nature walks and picnics, with clean, fresh air
+                        and panoramic landscapes that rejuvenate both mind and body.</p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 7:00 AM – 6:00 PM</p>
+                    <button class="add-to-cart" data-item="Tara Devi Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="adventure" class="culture-section">
+            <h2>Adventure in Shimla</h2>
+            <div class="culture-item">
+                <img src="https://shimlatourism.co.in/images/places-to-visit/headers/ice-skating-rink-shimla-tourism-entry-fee-timings-holidays-reviews-header.jpg"
+                    alt="Ice Skating">
+                <div class="text-content">
+                    <h2>Ice Skating</h2>
+                    <p>Shimla boasts the largest and oldest natural ice skating rink in South Asia. Every winter, this
+                        rink becomes a hub for adventure enthusiasts who love skating in the crisp mountain air with a
+                        backdrop of snow-covered hills and colonial architecture. The experience is exhilarating and
+                        attracts both beginners and experienced skaters who enjoy participating in annual carnivals and
+                        competitions. It is a unique winter activity where visitors can enjoy gliding over the ice and
+                        create unforgettable memories in the chill of the Himalayan atmosphere.</p>
+                    <p><strong>Cost:</strong> ₹200 per person</p>
+                    <p><strong>Timings:</strong> 8:00 AM – 11:00 AM & 5:00 PM – 8:00 PM (Dec-Feb)</p>
+                    <button class="add-to-cart" data-item="Ice Skating" data-cost="200">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="https://media.tripinvites.com/places/shimla/chadwick-falls/chadwick-falls-shimla-india-featured.jpg"
+                    alt="Trekking to Chadwick Falls">
+                <div class="text-content">
+                    <h2>Trekking to Chadwick Falls</h2>
+                    <p>Chadwick Falls is a hidden gem located about 7 km from the city center. Surrounded by thick pine
+                        and deodar forests, the trek to Chadwick Falls is an adventurous journey through serene natural
+                        beauty. The waterfall cascades from a height of around 100 meters, offering an ideal spot for
+                        photography, picnics, and peaceful reflection amidst the sounds of rushing water and chirping
+                        birds. The misty atmosphere around the falls and the chirping of exotic birds make the
+                        experience enchanting for nature lovers and adventure seekers alike.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> Best visited between 8:00 AM – 5:00 PM</p>
+                    <button class="add-to-cart" data-item="Chadwick Falls Trek" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Background Overlay -->
+            <div id="cart-overlay" class="cart-overlay"></div>
+            <!-- Cart Icon -->
+            <div id="cart-icon">🛒</div>
+            <!-- Cart Dropdown -->
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul> <!-- List of cart items -->
+                <p id="cart-summary"><strong>Total Items:</strong> 0</p> <!-- Total number of items -->
+                <p id="cart-total"><strong>Total Cost:</strong> ₹0.00</p> <!-- Total price -->
+            </div>
+        </section>
+    </section>
+
+    <section id="hotels">
+        <div class="cont-hotel">
+            <div class="left-hotel">
+                <h1> Hotels in Shimla</h1>
+                <p>
+                    We have a lot of hotels for you all over Shimla! So what are you waiting for? Book your room now!
+                </p>
+                <p>
+                    We have collaborated with the best hotels in the city to provide you with the best experience at a
+                    very low cost.
+                </p>
+            </div>
+            <div class="right-hotel">
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/cecil.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Oberoi Cecil</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹15,000 / night</div>
+                        <div class="description">
+                            A luxurious colonial-era hotel offering stunning mountain views and premium hospitality.
+                        </div>
+                        <button class="add-to-cart" data-item="The Oberoi Cecil" data-cost="15000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/radii.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Radisson Hotel Shimla</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹9,000 / night</div>
+                        <div class="description">
+                            Enjoy a luxurious stay with scenic views of the surrounding hills and excellent services.
+                        </div>
+                        <button class="add-to-cart" data-item="Radisson Hotel Shimla" data-cost="9000">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/clarkes.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Clarkes Hotel</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹7,500 / night</div>
+                        <div class="description">
+                            A heritage hotel on the Mall Road, offering comfort and elegance.
+                        </div>
+                        <button class="add-to-cart" data-item="Clarkes Hotel" data-cost="7500">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Snow Valley Resorts.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Snow Valley Resorts</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹4,500 / night</div>
+                        <div class="description">
+                            Have a pleasant stay experience in a plush property and enjoy the premium services.
+                        </div>
+                        <button class="add-to-cart" data-item="Snow Valley Resorts" data-cost="4500">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Regenta Resort MARS.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Regenta Resort MARS</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹3,800 / night</div>
+                        <div class="description">
+                            Regenta Resort M A R S valley View Nestled in the picturesque hill station of Shoghi in
+                            Shimla, at an altitude of 6400 feet in the great Himalayas
+                        </div>
+                        <button class="add-to-cart" data-item="Regenta Resort MARS" data-cost="3,800">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/The Bodhi Tree BNB.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Bodhi Tree BNB</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹3,000 / night</div>
+                        <div class="description">
+                            The Bodhi Tree B&B is a 7 Room Boutique Hospitality initiative. The property is surrounded
+                            by a dense deodar forest, offering an unobstructed view over-looking the Shivalik Ranges
+                        </div>
+                        <button class="add-to-cart" data-item="The Bodhi Tree BNB" data-cost="3000">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurants" class="restaurant-section">
+        <div class="restaurant-container">
+            <div class="restaurant-header">
+                <h1>Best Restaurants in Goa</h1>
+                <p>Discover the finest dining experiences with authentic Goan cuisine and international flavors</p>
+            </div>
+
+            <div class="restaurant-grid">
+                <!-- Restaurant Card 1 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Martin's Corner">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Martin's Corner</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Betalbatim, South Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Seafood</span>
+                            <span>Indian</span>
+                        </div>
+                        <p class="description">Famous for its authentic Goan cuisine and seafood specialties. Try their
+                            signature prawn curry and fish thali.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹800-1500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 2 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Gunpowder">
+                        <div class="restaurant-rating">4.7 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Gunpowder</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Assagao, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>South Indian</span>
+                            <span>Fusion</span>
+                            <span>Vegetarian</span>
+                        </div>
+                        <p class="description">Known for its innovative South Indian cuisine with a modern twist. Don't
+                            miss their appam and curry.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-2500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 3 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="La Plage">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>La Plage</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ashwem Beach, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>French</span>
+                            <span>Mediterranean</span>
+                            <span>Seafood</span>
+                        </div>
+                        <p class="description">Beachfront dining with French-Mediterranean cuisine. Famous for their
+                            fresh seafood and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹2500-4000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 4 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Viva Panjim">
+                        <div class="restaurant-rating">4.6 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Viva Panjim</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Portuguese</span>
+                            <span>Local</span>
+                        </div>
+                        <p class="description">Traditional Goan restaurant in a heritage house. Famous for their
+                            vindaloo and sorpotel.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹600-1200)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 5 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Fisherman's Wharf">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Fisherman's Wharf</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Seafood</span>
+                            <span>Goan</span>
+                            <span>Riverside</span>
+                        </div>
+                        <p class="description">Experience authentic Goan seafood cuisine by the Mandovi River. Famous
+                            for their fresh catch and traditional recipes.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-3000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 6 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Thalassa">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Thalassa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vagator, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Greek</span>
+                            <span>Mediterranean</span>
+                            <span>Beachfront</span>
+                        </div>
+                        <p class="description">Greek restaurant with stunning sunset views. Known for their fresh
+                            Mediterranean cuisine and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹3000-5000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safe">
+        <div class="safety-guide">
+            <h1>Travel Safety Guide</h1>
+            <p>Stay safe during your travels with these essential safety tips.</p>
+            <div class="tips">
+                <div class="tip">
+                    <h2>1. Keep Your Documents Safe</h2>
+                    <p>Make digital copies of your passport, visa, and important documents.</p>
+                </div>
+                <div class="tip">
+                    <h2>2. Stay Aware of Your Surroundings</h2>
+                    <p>Avoid unsafe areas and be cautious of common travel scams.</p>
+                </div>
+                <div class="tip">
+                    <h2>3. Emergency Contacts</h2>
+                    <p>Always have local police, hospital, and embassy contact numbers.</p>
+                </div>
+            </div>
+            <div class="weather-box">
+                <h2>Weather & Seasonal Safety</h2>
+                <p>Knowing the weather of Shimla helps you pack appropriately and avoid extreme conditions.</p>
+                <ul>
+                    <li><strong>Summer (March - June):</strong> Pleasant weather with temperatures around 15-30°C. Great
+                        for sightseeing.</li>
+                    <li><strong>Monsoon (July - September):</strong> Heavy rainfall may lead to landslides. Travel with
+                        caution.</li>
+                    <li><strong>Winter (November - February):</strong> Cold temperatures (0-10°C) with occasional
+                        snowfall. Perfect for snow lovers.</li>
+                </ul>
+            </div>
+            <div class="emergency-box">
+                <h2>Emergency Contacts</h2>
+                <ul>
+                    <li><strong>Police:</strong> 112 / 100</li>
+                    <li><strong>Medical Assistance (Ambulance):</strong> 102 / 108</li>
+                    <li><strong>Fire Department:</strong> 101</li>
+                    <li><strong>Women’s Helpline:</strong> 1091</li>
+                    <li><strong>Child Helpline:</strong> 1098</li>
+                    <li><strong>Tourist Helpline:</strong> 1363</li>
+                    <li><strong>Railway Helpline:</strong> 139</li>
+                    <li><strong>Embassy Assistance:</strong> <a href="https://www.embassy-worldwide.com/country/india/"
+                            target="_blank">Find your embassy</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/script_goa.js"></script>
+</body>
+
+</html>
