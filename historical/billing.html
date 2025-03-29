@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .user-profile,
+        .order-summary,
+        .payment-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-profile {
+            display: flex;
+            gap: 20px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-info h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .order-summary th,
+        .order-summary td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .payment-section {
+            grid-column: 1 / -1;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-method i {
+            font-size: 1.2em;
+        }
+
+        .payment-method.active {
+            border-color: #4CAF50;
+            background: #f0f9f0;
+        }
+
+        .payment-form {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .payment-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .pay-button {
+            width: 100%;
+            padding: 14px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .pay-button:hover {
+            background: #45a049;
+        }
+
+        /* UPI Specific Styles */
+        .upi-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .upi-option {
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .upi-option.active {
+            border-color: #4CAF50;
+            background: #f0f9f0;
+        }
+
+        .upi-section {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .upi-section.active {
+            display: block;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 1px solid #eee;
+            padding: 10px;
+            background: white;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .scan-instruction {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-methods {
+                flex-direction: column;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            max-width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .thank-you-message {
+            padding: 20px;
+        }
+
+        .thank-you-message h2 {
+            color: #4CAF50;
+            margin: 15px 0;
+        }
+
+        .thank-you-message button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- User Profile Section -->
+        <div class="user-profile">
+            <div class="profile-image">
+                <img id="profileImage" src="" alt="Profile">
+            </div>
+            <div class="user-info">
+                <h2 id="userName">Loading...</h2>
+                <p id="userEmail">Email: Loading...</p>
+                <p id="userPhone">Phone: Loading...</p>
+                <p id="userLocation">Location: Loading...</p>
+            </div>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cartItems">
+                    <!-- Cart items will be populated here -->
+                </tbody>
+            </table>
+            <div class="total">
+                Total: <span id="totalAmount">₹0</span>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment-section">
+            <h2>Payment Method</h2>
+            <div class="payment-methods">
+                <div class="payment-method active" data-method="card" data-form="card-form">
+                    <i class="far fa-credit-card"></i> Credit/Debit Card
+                </div>
+                <div class="payment-method" data-method="upi" data-form="upi-form">
+                    <i class="fas fa-mobile-alt"></i> UPI Payment
+                </div>
+            </div>
+
+            <!-- Card Payment Form -->
+            <div id="card-form" class="payment-form active">
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" id="card-number" maxlength="19" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-group">
+                    <label>Card Holder Name</label>
+                    <input type="text" id="card-holder" placeholder="John Doe">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" id="expiry-date" maxlength="5" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" id="cvv" maxlength="3" placeholder="123">
+                    </div>
+                </div>
+                <button class="pay-button" onclick="processPayment('card')">Pay Now</button>
+            </div>
+
+            <!-- UPI Payment Form -->
+            <div id="upi-form" class="payment-form">
+                <div class="upi-options">
+                    <div class="upi-option active" data-option="scan">
+                        <i class="fas fa-qrcode"></i> Scan QR Code
+                    </div>
+                    <div class="upi-option" data-option="id">
+                        <i class="fas fa-at"></i> Enter UPI ID
+                    </div>
+                </div>
+
+                <!-- QR Code Section -->
+                <div id="upi-scan-section" class="upi-section active">
+                    <div class="qr-code">
+                        <img id="qr-code-img" src="" alt="UPI QR Code">
+                    </div>
+                    <p class="scan-instruction">Scan this QR code using any UPI app to pay</p>
+                    <button class="pay-button" onclick="processPayment('upi')">Confirm Payment</button>
+                </div>
+
+                <!-- UPI ID Section -->
+                <div id="upi-id-section" class="upi-section">
+                    <div class="form-group">
+                        <label>UPI ID</label>
+                        <input type="text" id="upi-id" placeholder="yourname@upi">
+                    </div>
+                    <button class="pay-button" onclick="processPayment('upi')">Pay Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="thank-you-message">
+                <i class="fas fa-check-circle" style="color:#4CAF50;font-size:50px;"></i>
+                <h2>Thank You for Choosing Us!</h2>
+                <p>Your payment of <span id="paymentAmount"></span> was successful.</p>
+                <button onclick="redirectToHome()">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Billing page loaded');
+
+            // 1. Check authentication
+            const token = localStorage.getItem('token');
+            if (!token) {
+                console.log('No token found, redirecting to login');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            try {
+                // 2. Fetch checkout data from server
+                const response = await fetch('http://localhost:3000/cart/checkout', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                // 3. Handle authentication errors
+                if (response.status === 401 || response.status === 403) {
+                    localStorage.removeItem('token');
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                // 4. Process successful response
+                const data = await response.json();
+                console.log('Received checkout data:', data);
+
+                // 5. Update user profile section
+                updateUserProfile(data.user);
+
+                // 6. Update cart items and calculate total
+                updateCartItems(data.cart);
+
+                // 7. Initialize payment methods
+                setupPaymentMethods();
+
+                // 8. Generate initial QR code if UPI is selected by default
+                if (document.querySelector('.payment-method[data-method="upi"].active')) {
+                    generateQRCode();
+                }
+
+            } catch (error) {
+                console.error('Error during checkout:', error);
+                alert('Failed to load checkout data. Please try again.');
+            }
+
+            // Debug token info
+            debugToken();
+        });
+
+        function updateUserProfile(user) {
+            if (!user) return;
+
+            // Set profile image using UI Avatars API
+            const defaultImageUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=random&size=200`;
+            document.getElementById('profileImage').src = defaultImageUrl;
+
+            // Update user details
+            document.getElementById('userName').textContent = user.name || 'N/A';
+            document.getElementById('userEmail').textContent = `Email: ${user.email || 'N/A'}`;
+            document.getElementById('userPhone').textContent = `Phone: ${user.phone || 'N/A'}`;
+            document.getElementById('userLocation').textContent = `Location: ${user.location || 'N/A'}`;
+        }
+
+        function updateCartItems(cartItems) {
+            const cartItemsElement = document.getElementById('cartItems');
+            const totalAmountElement = document.getElementById('totalAmount');
+
+            // Clear existing items
+            cartItemsElement.innerHTML = '';
+
+            if (!cartItems || cartItems.length === 0) {
+                cartItemsElement.innerHTML = '<tr><td colspan="4" style="text-align: center;">No items in cart</td></tr>';
+                totalAmountElement.textContent = '₹0';
+                return;
+            }
+
+            // Calculate total and populate cart items
+            let total = 0;
+            cartItems.forEach(item => {
+                if (!item || !item.item || !item.cost) return;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.item}</td>
+                    <td>1</td>
+                    <td>₹${item.cost.toFixed(2)}</td>
+                    <td>₹${item.cost.toFixed(2)}</td>
+                `;
+                cartItemsElement.appendChild(row);
+                total += item.cost;
+            });
+
+            // Update total amount
+            totalAmountElement.textContent = `₹${total.toFixed(2)}`;
+        }
+
+        function setupPaymentMethods() {
+            // Payment method selection
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            const paymentForms = document.querySelectorAll('.payment-form');
+
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', () => {
+                    // Remove active class from all methods
+                    paymentMethods.forEach(m => m.classList.remove('active'));
+                    // Add active class to clicked method
+                    method.classList.add('active');
+
+                    // Hide all forms
+                    paymentForms.forEach(form => form.classList.remove('active'));
+                    // Show selected form
+                    const formId = method.getAttribute('data-form');
+                    document.getElementById(formId).classList.add('active');
+
+                    // If UPI is selected, generate QR code
+                    if (method.dataset.method === 'upi') {
+                        generateQRCode();
+                    }
+                });
+            });
+
+            // UPI option selection
+            const upiOptions = document.querySelectorAll('.upi-option');
+            const upiSections = document.querySelectorAll('.upi-section');
+
+            upiOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    upiOptions.forEach(o => o.classList.remove('active'));
+                    option.classList.add('active');
+
+                    // Hide all UPI sections
+                    upiSections.forEach(section => section.classList.remove('active'));
+
+                    // Show selected UPI section
+                    const sectionId = `upi-${option.dataset.option}-section`;
+                    document.getElementById(sectionId).classList.add('active');
+
+                    // If scan option selected, generate QR code
+                    if (option.dataset.option === 'scan') {
+                        generateQRCode();
+                    }
+                });
+            });
+
+            // Card number formatting
+            document.getElementById('card-number')?.addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, '');
+                value = value.replace(/(.{4})/g, '$1 ').trim();
+                e.target.value = value;
+            });
+
+            // Card expiry date formatting
+            document.getElementById('expiry-date')?.addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 2) {
+                    value = value.slice(0, 2) + '/' + value.slice(2, 4);
+                }
+                e.target.value = value;
+            });
+        }
+
+        // function generateQRCode() {
+        //     try {
+        //         const amount = parseFloat(document.getElementById('totalAmount').textContent.replace('₹', ''));
+        //         if (isNaN(amount) || amount <= 0) {
+        //             console.error('Invalid amount for QR code');
+        //             return;
+        //         }
+
+        //         const merchantUPI = 'merchant@upi'; // Replace with your actual UPI ID
+        //         const merchantName = 'Goa Tourism'; // Replace with your business name
+        //         const transactionNote = 'Payment for Goa Tour';
+
+        //         // Create UPI payment URL
+        //         const upiUrl = `upi://pay?pa=${merchantUPI}&pn=${encodeURIComponent(merchantName)}&am=${amount}&tn=${encodeURIComponent(transactionNote)}&cu=INR`;
+
+        //         // Generate QR code using an API
+        //         const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiUrl)}`;
+
+        //         // Update QR code image
+        //         document.getElementById('qr-code-img').src = qrCodeUrl;
+        //     } catch (error) {
+        //         console.error('Error generating QR code:', error);
+        //     }
+        // }
+
+
+        function generateQRCode() {
+            try {
+                const amount = parseFloat(document.getElementById('totalAmount').textContent.replace('¥', ''));
+                const merchantUPI = 'goatourism@upi'; // Replace with your UPI ID
+                const merchantName = 'Goa Tourism';
+                const transactionNote = 'Thank You for Choosing Us'; // Added thank you message
+
+                const upiUrl = `upi://pay?pa=${merchantUPI}&pn=${encodeURIComponent(merchantName)}&am=${amount}&tn=${encodeURIComponent(transactionNote)}&cu=INR`;
+                const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiUrl)}`;
+
+                document.getElementById('qr-code-img').src = qrCodeUrl;
+            } catch (error) {
+                console.error('QR Code generation error:', error);
+            }
+        }
+        async function processPayment(method) {
+            if (method === 'upi') {
+                try {
+                    const amount = parseFloat(document.getElementById('totalAmount').textContent.replace('¥', ''));
+
+                    // Show processing message
+                    alert('Please complete the payment in your UPI app...');
+
+                    // Simulate payment verification (in real app, poll your backend)
+                    setTimeout(() => {
+                        showConfirmation(amount);
+
+                        // Clear cart after successful payment
+                        clearCart();
+                    }, 3000);
+
+                } catch (error) {
+                    console.error('UPI payment error:', error);
+                    alert('UPI payment failed. Please try again.');
+                }
+            }
+            try {
+                const amount = parseFloat(document.getElementById('totalAmount').textContent.replace('₹', ''));
+                if (isNaN(amount) || amount <= 0) {
+                    alert('Cannot process payment for empty cart');
+                    return;
+                }
+
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                // Validate payment details based on method
+                if (method === 'card') {
+                    const cardNumber = document.getElementById('card-number').value.replace(/\s/g, '');
+                    const cardHolder = document.getElementById('card-holder').value;
+                    const expiryDate = document.getElementById('expiry-date').value;
+                    const cvv = document.getElementById('cvv').value;
+
+                    if (!cardNumber || cardNumber.length < 16 || !cardHolder || !expiryDate || !cvv) {
+                        alert('Please fill in all card details correctly');
+                        return;
+                    }
+                } else if (method === 'upi') {
+                    const upiId = document.getElementById('upi-id')?.value;
+                    if (document.getElementById('upi-id-section').classList.contains('active') && !upiId) {
+                        alert('Please enter UPI ID');
+                        return;
+                    }
+                }
+
+                // Process payment with backend
+                const response = await fetch(`http://localhost:3000/payments/${method}`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        amount: amount,
+                        ...(method === 'card' ? {
+                            cardNumber: document.getElementById('card-number').value.replace(/\s/g, ''),
+                            cardHolder: document.getElementById('card-holder').value,
+                            expiryDate: document.getElementById('expiry-date').value,
+                            cvv: document.getElementById('cvv').value
+                        } : {
+                            upiId: document.getElementById('upi-id')?.value || 'qr_scan'
+                        })
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Payment failed');
+                }
+
+                // Clear cart after successful payment
+                await fetch('http://localhost:3000/cart/clear', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                alert(`Payment of ₹${amount.toFixed(2)} successful!`);
+                window.location.href = 'confirmation.html';
+
+            } catch (error) {
+                console.error('Payment error:', error);
+                alert(`Payment failed: ${error.message}`);
+            }
+        }
+
+        function showConfirmation(amount) {
+            document.getElementById('paymentAmount').textContent = '¥' + amount.toFixed(2);
+            document.getElementById('confirmationModal').style.display = 'block';
+        }
+
+        function redirectToHome() {
+            window.location.href = 'index.html';
+        }
+
+        function clearCart() {
+            const token = localStorage.getItem('token');
+            if (!token) return;
+
+            fetch('http://localhost:3000/cart/clear', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }).catch(error => console.error('Error clearing cart:', error));
+        }
+
+        function debugToken() {
+            const token = localStorage.getItem('token');
+            console.log('Current token:', token);
+
+            if (token) {
+                try {
+                    const payload = JSON.parse(atob(token.split('.')[1]));
+                    console.log('Token payload:', payload);
+                    console.log('Token expires:', new Date(payload.exp * 1000));
+                } catch (e) {
+                    console.log('Error parsing token:', e);
+                }
+            }
+        }
+
+        function showConfirmation(amount) {
+            document.getElementById('paymentAmount').textContent = '¥' + amount.toFixed(2);
+            document.getElementById('confirmationModal').style.display = 'block';
+        }
+
+        function redirectToHome() {
+            window.location.href = 'index.html';
+        }
+
+        function clearCart() {
+            const token = localStorage.getItem('token');
+            if (!token) return;
+
+            fetch('http://localhost:3000/cart/clear', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }).catch(error => console.error('Error clearing cart:', error));
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage India - Historical Tour Packages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="historical.css">
+</head>
+<body>
+    <!-- Cart Container -->
+    <div class="cart-container">
+        <div id="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div id="cart-dropdown">
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button id="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">Heritage India</h1>
+            <p class="tagline">Journey Through India's Glorious Past</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Explore India's Architectural Marvels</h2>
+            <p>Discover the rich tapestry of India's history through our curated tours of UNESCO World Heritage Sites and ancient monuments.</p>
+        </section>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Tours</button>
+            <button class="filter-btn" data-filter="north">North India</button>
+            <button class="filter-btn" data-filter="south">South India</button>
+            <button class="filter-btn" data-filter="unesco">UNESCO Sites</button>
+        </div>
+
+        <section class="tour-packages">
+            <!-- Taj Mahal & Agra Fort -->
+            <div class="tour-card" data-category="north unesco">
+                <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523');">
+                    <span class="tour-badge">Most Popular</span>
+                </div>
+                <div class="tour-content">
+                    <h3>Taj Mahal & Agra Fort</h3>
+                    <div class="tour-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh</span>
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                    </div>
+                    <div class="tour-price">
+                        <span class="price">From ₹8,500</span>
+                    </div>
+                    <div class="tour-actions">
+                        <button class="btn view-details" data-tour="taj-mahal">View Details</button>
+                        <button class="btn add-to-cart"><i class="fas fa-shopping-cart me-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hampi Ruins -->
+            <div class="tour-card" data-category="south unesco">
+                <div class="tour-image" style="background-image: url('https://res.cloudinary.com/dl5j1qsdx/image/upload/v1742957572/srusti-valakamadinni-I_8I75ogzkE-unsplash_qik1ms.jpg');">
+                    <span class="tour-badge">Ancient</span>
+                </div>
+                <div class="tour-content">
+                    <h3>Hampi Ruins Exploration</h3>
+                    <div class="tour-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Hampi, Karnataka</span>
+                        <span><i class="far fa-clock"></i> 3 Days / 2 Nights</span>
+                    </div>
+                    <div class="tour-price">
+                        <span class="price">From ₹12,000</span>
+                    </div>
+                    <div class="tour-actions">
+                        <button class="btn view-details" data-tour="hampi">View Details</button>
+                        <button class="btn add-to-cart"><i class="fas fa-shopping-cart me-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khajuraho Temples -->
+            <div class="tour-card" data-category="north unesco">
+                <div class="tour-image" style="background-image: url('https://res.cloudinary.com/dl5j1qsdx/image/upload/v1742957901/Screenshot_2025-03-26_082218_ufpj6k.png');">
+                    <span class="tour-badge">Architectural</span>
+                </div>
+                <div class="tour-content">
+                    <h3>Khajuraho Temples</h3>
+                    <div class="tour-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Khajuraho, Madhya Pradesh</span>
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                    </div>
+                    <div class="tour-price">
+                        <span class="price">From ₹9,500</span>
+                    </div>
+                    <div class="tour-actions">
+                        <button class="btn view-details" data-tour="khajuraho">View Details</button>
+                        <button class="btn add-to-cart"><i class="fas fa-shopping-cart me-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mahabalipuram -->
+            <div class="tour-card" data-category="south unesco">
+                <div class="tour-image" style="background-image: url('https://res.cloudinary.com/dl5j1qsdx/image/upload/v1742958096/ragu-clicks-D1-echCD6io-unsplash_v4qizi.jpg');">
+                    <span class="tour-badge">Coastal</span>
+                </div>
+                <div class="tour-content">
+                    <h3>Mahabalipuram Heritage</h3>
+                    <div class="tour-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Mahabalipuram, Tamil Nadu</span>
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                    </div>
+                    <div class="tour-price">
+                        <span class="price">From ₹7,500</span>
+                    </div>
+                    <div class="tour-actions">
+                        <button class="btn view-details" data-tour="mahabalipuram">View Details</button>
+                        <button class="btn add-to-cart"><i class="fas fa-shopping-cart me-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delhi Heritage -->
+            <div class="tour-card" data-category="north">
+                <div class="tour-image" style="background-image: url('https://res.cloudinary.com/dl5j1qsdx/image/upload/v1742958092/prashant-SXoMYZQ0gqM-unsplash_bsizfi.jpg');">
+                    <span class="tour-badge">Capital</span>
+                </div>
+                <div class="tour-content">
+                    <h3>Delhi Heritage Walk</h3>
+                    <div class="tour-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Delhi</span>
+                        <span><i class="far fa-clock"></i> 1 Day</span>
+                    </div>
+                    <div class="tour-price">
+                        <span class="price">From ₹4,000</span>
+                    </div>
+                    <div class="tour-actions">
+                        <button class="btn view-details" data-tour="delhi">View Details</button>
+                        <button class="btn add-to-cart"><i class="fas fa-shopping-cart me-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Konark Sun Temple -->
+            <div class="tour-card" data-category="south unesco">
+                <div class="tour-image" style="background-image: url('https://res.cloudinary.com/dl5j1qsdx/image/upload/v1742958100/ujjval-verma-klj4MrR4Djk-unsplash_qftdus.jpg');">
+                    <span class="tour-badge">Unique</span>
+                </div>
+                <div class="tour-content">
+                    <h3>Konark Sun Temple</h3>
+                    <div class="tour-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Konark, Odisha</span>
+                        <span><i class="far fa-clock"></i> 2 Days / 1 Night</span>
+                    </div>
+                    <div class="tour-price">
+                        <span class="price">From ₹6,500</span>
+                    </div>
+                    <div class="tour-actions">
+                        <button class="btn view-details" data-tour="konark">View Details</button>
+                        <button class="btn add-to-cart"><i class="fas fa-shopping-cart me-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-container">
+            <button class="close-modal">&times;</button>
+            <div class="modal-content" id="modal-content">
+                <!-- Content will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="historical.js"></script>
+</body>
+</html>
