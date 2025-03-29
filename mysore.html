@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Mysore</title>
+    <link rel="stylesheet" href="css/styles_goa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="other">
+        <nav class="top-nav">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#monuments">Monuments</a></li>
+                    <li><a href="#temples">Temples</a></li>
+                    <li><a href="#adventure">Adventure</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#safe">SafetyGuide</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        <!-- Cart Icon and Dropdown -->
+        <div class="cart-container">
+            <div id="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+
+        <header class="mysore-header">
+            <h1>Explore Mysore – The Cultural Capital of Karnataka!</h1>
+        </header>
+
+        <main class="main-description">
+            <p>Mysore, known as the City of Palaces, is a treasure trove of history, spirituality, and adventure. The
+                city boasts magnificent monuments, sacred temples, and thrilling activities that attract visitors from
+                all over the world. Whether you're an explorer, a devotee, or an adventure seeker, Mysore has something
+                truly special to offer.</p>
+        </main>
+
+        <!-- Monuments Section -->
+        <section id="monuments" class="culture-section">
+            <h2>Historic Monuments</h2>
+            <div class="culture-item">
+                <img src="images/mysore.jpg" alt="Mysore Palace">
+                <div class="text-content">
+                    <h2>Mysore Palace</h2>
+                    <p>The Mysore Palace is an architectural masterpiece and one of the most visited landmarks in India.
+                        Its Indo-Saracenic style, intricate interiors, and grand halls reflect the city's royal
+                        heritage. The palace is illuminated with over 97,000 bulbs during special occasions, making it a
+                        mesmerizing sight at night.</p>
+                    <p><strong>Cost:</strong> ₹70 (Indian nationals), ₹200 (Foreign tourists)</p>
+                    <p><strong>Timings:</strong> 10:00 AM – 5:30 PM</p>
+                    <button class="add-to-cart" data-item="Mysore Palace" data-cost="70">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/jagmohon.jpg" alt="Jaganmohan Palace">
+                <div class="text-content">
+                    <h2>Jaganmohan Palace</h2>
+                    <p>Once a royal residence, Jaganmohan Palace now serves as an art gallery showcasing an extensive
+                        collection of paintings and artifacts. The palace is famous for housing the works of Raja Ravi
+                        Varma and other renowned artists.</p>
+                    <p><strong>Cost:</strong> ₹20 per person</p>
+                    <p><strong>Timings:</strong> 8:30 AM – 5:30 PM</p>
+                    <button class="add-to-cart" data-item="Jaganmohan Palace" data-cost="20">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/lalitha.jpg" alt="Lalitha Mahal">
+                <div class="text-content">
+                    <h2>Lalitha Mahal</h2>
+                    <p>Built in 1921, Lalitha Mahal is a striking white palace inspired by St. Paul’s Cathedral in
+                        London. Now a luxury hotel, it retains its royal charm with exquisite chandeliers, marble
+                        floors, and sprawling gardens.</p>
+                    <p><strong>Cost:</strong> Free (Hotel guests), Entry fee for visitors</p>
+                    <p><strong>Timings:</strong> 10:00 AM – 6:00 PM</p>
+                    <button class="add-to-cart" data-item="Lalitha Mahal" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Temples Section -->
+        <section id="temples" class="culture-section">
+            <h2>Famous Temples</h2>
+            <div class="culture-item">
+                <img src="images/chamun.jpg" alt="Chamundeshwari Temple">
+                <div class="text-content">
+                    <h2>Chamundeshwari Temple</h2>
+                    <p>Perched atop Chamundi Hills, this temple is dedicated to Goddess Chamundeshwari, the presiding
+                        deity of Mysore. The temple's intricate carvings, towering gopuram, and divine aura make it a
+                        revered pilgrimage site.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> 7:30 AM – 9:00 PM</p>
+                    <button class="add-to-cart" data-item="Chamundeshwari Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/tri.jpg" alt="Trinesvaraswamy Temple">
+                <div class="text-content">
+                    <h2>Trinesvaraswamy Temple</h2>
+                    <p>Located near Mysore Palace, this ancient temple is dedicated to Lord Shiva. It is known for its
+                        serene ambiance and the intricate Dravidian-style architecture.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> 6:00 AM – 12:00 PM, 4:00 PM – 8:00 PM</p>
+                    <button class="add-to-cart" data-item="Trinesvaraswamy Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/nan.jpg" alt="Nanjangud Temple">
+                <div class="text-content">
+                    <h2>Nanjangud Temple</h2>
+                    <p>Situated on the banks of the Kabini River, this temple is dedicated to Lord Srikanteshwara, a
+                        form of Shiva. It is often called the "Varanasi of the South" and is one of the largest temples
+                        in Karnataka.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> 6:00 AM – 8:30 PM</p>
+                    <button class="add-to-cart" data-item="Nanjangud Temple" data-cost="0">Add to Cart</button>
+                </div>
+        </section>
+
+        <!-- Adventure Section -->
+        <section id="adventure" class="culture-section">
+            <div class="culture-item">
+                <img src="images/zip.jpg" alt="Zip-lining at Chamundi Hills">
+                <div class="text-content">
+                    <h2>Zip-lining at Chamundi Hills</h2>
+                    <p>Experience the thrill of zip-lining over the lush green valleys of Chamundi Hills. A perfect
+                        adventure for adrenaline seekers.</p>
+                    <p><strong>Cost:</strong> ₹1500 per person</p>
+                    <p><strong>Timings:</strong> 9:00 AM – 5:00 PM</p>
+                    <button class="add-to-cart" data-item="Zip-lining at Chamundi Hills" data-cost="1500">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/ballon.jpg" alt="Hot Air Balloon Ride">
+                <div class="text-content">
+                    <h2>Hot Air Balloon Ride</h2>
+                    <p>Enjoy panoramic views of Mysore from the sky. The experience is magical, especially at sunrise
+                        when the city is bathed in golden light.</p>
+                    <p><strong>Cost:</strong> ₹8000 per person</p>
+                    <p><strong>Timings:</strong> 5:30 AM – 7:00 AM</p>
+                    <button class="add-to-cart" data-item="Hot Air Balloon Ride" data-cost="8000">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Background Overlay -->
+            <div id="cart-overlay" class="cart-overlay"></div>
+            <!-- Cart Icon -->
+            <div id="cart-icon">🛒</div>
+            <!-- Cart Dropdown -->
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul> <!-- List of cart items -->
+                <p id="cart-summary"><strong>Total Items:</strong> 0</p> <!-- Total number of items -->
+                <p id="cart-total"><strong>Total Cost:</strong> ₹0.00</p> <!-- Total price -->
+            </div>>
+
+
+        </section>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels">
+        <div class="cont-hotel">
+            <div class="left-hotel">
+                <h1> Hotels in Mysore</h1>
+                <p>
+                    We have a lot of hotels for you all over Mysore! So what are you waiting for? Book your room now!
+                </p>
+                <p>
+                    We have collaborated with the best hotels in the city to provide you with the best experience at a
+                    very low cost.
+                </p>
+            </div>
+            <div class="right-hotel">
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/radmy.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Radisson Blu Plaza Hotel Mysore</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹7,500 / night</div>
+                        <div class="description">
+                            A luxurious stay with scenic views and premium amenities near Mysore Palace.
+                        </div>
+                        <button class="add-to-cart" data-item="Radisson Blu Plaza Hotel" data-cost="7500">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Southern Star Mysuru.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Southern Star Mysuru</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹7,000 / night</div>
+                        <div class="description">
+                            Experience royal hospitality with modern comforts in the heart of Mysore.
+                        </div>
+                        <button class="add-to-cart" data-item="Southern Star Mysuru" data-cost="7000">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/grandmer.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Grand Mercure Mysore</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹5,500 / night</div>
+                        <div class="description">
+                            A perfect blend of elegance and comfort for a premium stay in Mysore.
+                        </div>
+                        <button class="add-to-cart" data-item="Grand Mercure Mysore" data-cost="5500">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/The Atrium Boutique Hotel.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Atrium Boutique Hotel</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹2,500 / night</div>
+                        <div class="description">
+                            The Atrium Boutique Hotel which stands as a calm tranquil oasis on the ever busy and
+                            energetic Bangalore Mysore State Highway, Mysore.
+                        </div>
+                        <button class="add-to-cart" data-item="The Atrium Boutique Hotel" data-cost="2500">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Kings Kourt Hotel.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Kings Kourt Hotel</div>
+                        <div class="stars">⭐⭐⭐</div>
+                        <div class="price">₹1,783 / night</div>
+                        <div class="description">
+                            Kings Kourt Hotel is well know 3 star Mysore located on Jhansi Lakshmibai Road.The hotel's
+                            long list of offerings include room service, chargeable laundry options, business event
+                            hosting facilities, a restaurant, bar and parking space on the site
+                        </div>
+                        <button class="add-to-cart" data-item="Kings Kourt Hotel" data-cost="1783">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Fortune Jp Palace.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Fortune Jp Palace</div>
+                        <div class="stars">⭐⭐⭐</div>
+                        <div class="price">₹5,980 / night</div>
+                        <div class="description">
+                            Ideally located opposite the government guest house Fortune JP Palace is well-connected to
+                            all nearby tourist attractions.
+                        </div>
+                        <button class="add-to-cart" data-item="Fortune Jp Palace" data-cost="5980">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurants" class="restaurant-section">
+        <div class="restaurant-container">
+            <div class="restaurant-header">
+                <h1>Best Restaurants in Goa</h1>
+                <p>Discover the finest dining experiences with authentic Goan cuisine and international flavors</p>
+            </div>
+
+            <div class="restaurant-grid">
+                <!-- Restaurant Card 1 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Martin's Corner">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Martin's Corner</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Betalbatim, South Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Seafood</span>
+                            <span>Indian</span>
+                        </div>
+                        <p class="description">Famous for its authentic Goan cuisine and seafood specialties. Try their
+                            signature prawn curry and fish thali.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹800-1500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 2 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Gunpowder">
+                        <div class="restaurant-rating">4.7 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Gunpowder</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Assagao, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>South Indian</span>
+                            <span>Fusion</span>
+                            <span>Vegetarian</span>
+                        </div>
+                        <p class="description">Known for its innovative South Indian cuisine with a modern twist. Don't
+                            miss their appam and curry.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-2500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 3 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="La Plage">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>La Plage</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ashwem Beach, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>French</span>
+                            <span>Mediterranean</span>
+                            <span>Seafood</span>
+                        </div>
+                        <p class="description">Beachfront dining with French-Mediterranean cuisine. Famous for their
+                            fresh seafood and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹2500-4000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 4 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Viva Panjim">
+                        <div class="restaurant-rating">4.6 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Viva Panjim</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Portuguese</span>
+                            <span>Local</span>
+                        </div>
+                        <p class="description">Traditional Goan restaurant in a heritage house. Famous for their
+                            vindaloo and sorpotel.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹600-1200)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 5 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Fisherman's Wharf">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Fisherman's Wharf</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Seafood</span>
+                            <span>Goan</span>
+                            <span>Riverside</span>
+                        </div>
+                        <p class="description">Experience authentic Goan seafood cuisine by the Mandovi River. Famous
+                            for their fresh catch and traditional recipes.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-3000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 6 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Thalassa">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Thalassa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vagator, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Greek</span>
+                            <span>Mediterranean</span>
+                            <span>Beachfront</span>
+                        </div>
+                        <p class="description">Greek restaurant with stunning sunset views. Known for their fresh
+                            Mediterranean cuisine and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹3000-5000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safe">
+        <div class="safety-guide">
+            <h1>Travel Safety Guide</h1>
+            <p>Stay safe during your travels with these essential safety tips.</p>
+            <div class="tips">
+                <div class="tip">
+                    <h2>1. Keep Your Documents Safe</h2>
+                    <p>Make digital copies of your passport, visa, and important documents.</p>
+                </div>
+                <div class="tip">
+                    <h2>2. Stay Aware of Your Surroundings</h2>
+                    <p>Avoid unsafe areas and be cautious of common travel scams.</p>
+                </div>
+                <div class="tip">
+                    <h2>3. Emergency Contacts</h2>
+                    <p>Always have local police, hospital, and embassy contact numbers.</p>
+                </div>
+            </div>
+            <div class="weather-box">
+                <h2>Weather & Seasonal Safety</h2>
+                <p>Knowing the weather in Mysore helps you pack appropriately and plan your travel with comfort in mind.
+                </p>
+                <ul>
+                    <li><strong>Summer (March - June):</strong> Warm and dry, with temperatures ranging from 25°C to
+                        35°C (77°F to 95°F). Stay hydrated, wear light cotton clothing, and avoid outdoor activities
+                        during peak afternoon hours.</li>
+                    <li><strong>Monsoon (July - September):</strong> Moderate to heavy rainfall, bringing lush greenery
+                        and cooler temperatures. Carry an umbrella or raincoat, and be prepared for occasional travel
+                        delays due to rain.</li>
+                    <li><strong>Winter (October - February):</strong> Pleasant and cool, with temperatures ranging from
+                        15°C to 25°C (59°F to 77°F). Ideal for sightseeing and outdoor activities. Light woolens may be
+                        needed for early mornings and late evenings.</li>
+                </ul>
+
+            </div>
+            <div class="emergency-box">
+                <h2>Emergency Contacts</h2>
+                <ul>
+                    <li><strong>Police:</strong> 112 / 100</li>
+                    <li><strong>Medical Assistance (Ambulance):</strong> 102 / 108</li>
+                    <li><strong>Fire Department:</strong> 101</li>
+                    <li><strong>Women’s Helpline:</strong> 1091</li>
+                    <li><strong>Child Helpline:</strong> 1098</li>
+                    <li><strong>Tourist Helpline:</strong> 1363</li>
+                    <li><strong>Railway Helpline:</strong> 139</li>
+                    <li><strong>Embassy Assistance:</strong> <a href="https://www.embassy-worldwide.com/country/india/"
+                            target="_blank">Find your embassy</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/script_goa.js"></script>
+</body>
+
+</html>

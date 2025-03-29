@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Jaipur</title>
+    <link rel="stylesheet" href="css/styles_goa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="other">
+        <nav class="top-nav">
+            <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#monuments">Monuments</a></li>
+                <li><a href="#temples">Temples</a></li>
+                <li><a href="#adventure">Adventure</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#safe">SafetyGuide</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        </nav>
+        <!-- Cart Icon and Dropdown -->
+        <div class="cart-container">
+            <div id="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+        <header class="jaipur-header">
+            <h1>Explore Jaipur – The Pink City of India!</h1>
+        </header>
+
+        <main class="main-description">
+            <p>Jaipur, the capital of Rajasthan, is a city of grandeur, history, and adventure. Known as the Pink City,
+                Jaipur is home to stunning palaces, magnificent temples, and thrilling adventure activities that make it
+                a top travel destination in India. Whether you're drawn to royal heritage, spiritual tranquility, or
+                adrenaline-pumping experiences, Jaipur has something for everyone.</p>
+        </main>
+
+        <!-- Monuments Section -->
+        <section id="monuments" class="culture-section">
+            <h2>Historic Monuments</h2>
+            <div class="culture-item">
+                <img src="images/hwa.jpg" alt="Hawa Mahal">
+                <div class="text-content">
+                    <h2>Hawa Mahal</h2>
+                    <p>Hawa Mahal, also known as the Palace of Winds, is an architectural marvel with its stunning pink
+                        facade and 953 intricate windows. Built in 1799, it allowed royal women to observe street
+                        festivals without being seen. The palace offers breathtaking views of Jaipur from the top.</p>
+                    <p><strong>Cost:</strong> ₹50 (Indian nationals), ₹200 (Foreign tourists)</p>
+                    <p><strong>Timings:</strong> 9:00 AM – 4:30 PM</p>
+                    <button class="add-to-cart" data-item="Hawa Mahal" data-cost="50">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/amber.jpg" alt="Amber Fort">
+                <div class="text-content">
+                    <h2>Amber Fort</h2>
+                    <p>One of Jaipur’s most iconic forts, Amber Fort is known for its artistic Hindu-style elements.
+                        With grand courtyards, intricate mirror work, and stunning views of Maota Lake, it’s a
+                        must-visit. The evening light and sound show brings history to life.</p>
+                    <p><strong>Cost:</strong> ₹100 (Indian nationals), ₹500 (Foreign tourists)</p>
+                    <p><strong>Timings:</strong> 8:00 AM – 6:00 PM</p>
+                    <button class="add-to-cart" data-item="Amber Fort" data-cost="100">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/city.jpg" alt="City Palace">
+                <div class="text-content">
+                    <h2>City Palace</h2>
+                    <p>A stunning blend of Mughal and Rajput architecture, the City Palace houses courtyards, museums,
+                        and royal residences. The museum showcases artifacts, textiles, and weapons of the past,
+                        offering a glimpse into Jaipur’s royal history.</p>
+                    <p><strong>Cost:</strong> ₹200 (Indian nationals), ₹700 (Foreign tourists)</p>
+                    <p><strong>Timings:</strong> 9:30 AM – 5:00 PM</p>
+                    <button class="add-to-cart" data-item="City Palace" data-cost="200">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Temples Section -->
+        <section id="temples" class="culture-section">
+            <h2>Famous Temples</h2>
+            <div class="culture-item">
+                <img src="images/birla.jpg" alt="Birla Mandir">
+                <div class="text-content">
+                    <h2>Birla Mandir</h2>
+                    <p>Birla Mandir is a serene white marble temple dedicated to Lord Vishnu and Goddess Lakshmi. The
+                        temple is adorned with intricate carvings depicting Hindu scriptures and is beautifully
+                        illuminated at night.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> 6:00 AM – 12:00 PM, 3:00 PM – 9:00 PM</p>
+                    <button class="add-to-cart" data-item="Birla Mandir" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/gltaji.jpg" alt="Galtaji Temple">
+                <div class="text-content">
+                    <h2>Galtaji Temple</h2>
+                    <p>Also known as the Monkey Temple, Galtaji is an ancient Hindu pilgrimage site with a natural
+                        spring that fills seven sacred water tanks. The temple is surrounded by hills, offering a
+                        peaceful and spiritual retreat.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> 5:00 AM – 9:00 PM</p>
+                    <button class="add-to-cart" data-item="Galtaji Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/motidungri.jpg" alt="Moti Dungri Temple">
+                <div class="text-content">
+                    <h2>Moti Dungri Temple</h2>
+                    <p>Moti Dungri Temple is dedicated to Lord Ganesha and is a significant place of worship for
+                        devotees. The temple is built on a hilltop and showcases exquisite stone carvings.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> 5:00 AM – 1:30 PM, 4:30 PM – 9:00 PM</p>
+                    <button class="add-to-cart" data-item="Moti Dungri Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure Section -->
+        <section id="adventure" class="culture-section">
+            <h2>Adventure Activities in Jaipur</h2>
+            <div class="culture-item">
+                <img src="images/ar.jpg" alt="Hot Air Balloon Ride">
+                <div class="text-content">
+                    <h2>Hot Air Balloon Ride</h2>
+                    <p>Soar over the Pink City and witness breathtaking views of Amber Fort, Nahargarh, and the vast
+                        landscapes of Rajasthan from above.</p>
+                    <p><strong>Cost:</strong> ₹12,000 per person</p>
+                    <p><strong>Timings:</strong> 5:30 AM – 7:30 AM</p>
+                    <button class="add-to-cart" data-item="Hot Air Balloon Ride" data-cost="12000">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/camel.jpg" alt="Camel Safari">
+                <div class="text-content">
+                    <h2>Camel Safari</h2>
+                    <p>Experience a thrilling camel safari in the golden sands near Jaipur. Ride through the rustic
+                        villages and witness the mesmerizing sunset in the desert.</p>
+                    <p><strong>Cost:</strong> ₹1,500 per person</p>
+                    <p><strong>Timings:</strong> 4:00 PM – 7:00 PM</p>
+                    <button class="add-to-cart" data-item="Camel Safari" data-cost="1500">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Background Overlay -->
+            <div id="cart-overlay" class="cart-overlay"></div>
+            <!-- Cart Icon -->
+            <div id="cart-icon">🛒</div>
+            <!-- Cart Dropdown -->
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul> <!-- List of cart items -->
+                <p id="cart-summary"><strong>Total Items:</strong> 0</p> <!-- Total number of items -->
+                <p id="cart-total"><strong>Total Cost:</strong> ₹0.00</p> <!-- Total price -->
+            </div>
+
+
+        </section>
+    </section>
+
+    <section id="hotels">
+        <div class="cont-hotel">
+            <div class="left-hotel">
+                <h1> Hotels in Jaipur</h1>
+                <p>
+                    We have a lot of hotels for you all over Jaipur! So what are you waiting for? Book your room now!
+                </p>
+                <p>
+                    We have collaborated with the best hotels in the city to provide you with the best experience at a
+                    very low cost.
+                </p>
+            </div>
+            <div class="right-hotel">
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/raj.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Raj Palace</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹12,000 / night</div>
+                        <div class="description">
+                            A luxurious heritage stay offering royal hospitality near Jaipur's top attractions.
+                        </div>
+                        <button class="add-to-cart" data-item="The Raj Palace" data-cost="12000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/itc.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">ITC Rajputana</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹8,500 / night</div>
+                        <div class="description">
+                            Experience grandeur and comfort with Rajasthani elegance in the heart of Jaipur.
+                        </div>
+                        <button class="add-to-cart" data-item="ITC Rajputana" data-cost="8500">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/mariot.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Jaipur Marriott Hotel</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹7,000 / night</div>
+                        <div class="description">
+                            A perfect blend of modern luxury and traditional Rajasthani culture.
+                        </div>
+                        <button class="add-to-cart" data-item="Jaipur Marriott Hotel" data-cost="7000">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Chitra Katha.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Chitra Katha</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹1,800 / night</div>
+                        <div class="description">
+                            'Chitra Katha - A Story Per Stay' is a boutique homestay in Jaipur that shares its boundary
+                            with the stunning Hathroi Fort
+                        </div>
+                        <button class="add-to-cart" data-item="Chitra Katha" data-cost="1800">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Hotel Sugan Niwas Palace.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Hotel Sugan Niwas Palace</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹1,600 / night</div>
+                        <div class="description">
+                            Sugan Niwas Palace Hotel is surrounded by artistically landscaped lush gardens where
+                            peacocks dance and the ambiance of the surroundings takes you back to a bygone era
+                        </div>
+                        <button class="add-to-cart" data-item="Hotel Sugan Niwas Palace" data-cost="1600">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/The Fern Habitat.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Fern Habitat</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹4,600 / night</div>
+                        <div class="description">
+                            The Fern Habitat in Jaipur garners high praise for its comfortable amenities, including
+                            eco-friendly practices and a popular rooftop pool.
+                        </div>
+                        <button class="add-to-cart" data-item="The Fern Habitat" data-cost="4600">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurants" class="restaurant-section">
+        <div class="restaurant-container">
+            <div class="restaurant-header">
+                <h1>Best Restaurants in Goa</h1>
+                <p>Discover the finest dining experiences with authentic Goan cuisine and international flavors</p>
+            </div>
+
+            <div class="restaurant-grid">
+                <!-- Restaurant Card 1 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Martin's Corner">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Martin's Corner</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Betalbatim, South Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Seafood</span>
+                            <span>Indian</span>
+                        </div>
+                        <p class="description">Famous for its authentic Goan cuisine and seafood specialties. Try their
+                            signature prawn curry and fish thali.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹800-1500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 2 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Gunpowder">
+                        <div class="restaurant-rating">4.7 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Gunpowder</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Assagao, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>South Indian</span>
+                            <span>Fusion</span>
+                            <span>Vegetarian</span>
+                        </div>
+                        <p class="description">Known for its innovative South Indian cuisine with a modern twist. Don't
+                            miss their appam and curry.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-2500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 3 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="La Plage">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>La Plage</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ashwem Beach, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>French</span>
+                            <span>Mediterranean</span>
+                            <span>Seafood</span>
+                        </div>
+                        <p class="description">Beachfront dining with French-Mediterranean cuisine. Famous for their
+                            fresh seafood and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹2500-4000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 4 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Viva Panjim">
+                        <div class="restaurant-rating">4.6 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Viva Panjim</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Portuguese</span>
+                            <span>Local</span>
+                        </div>
+                        <p class="description">Traditional Goan restaurant in a heritage house. Famous for their
+                            vindaloo and sorpotel.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹600-1200)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 5 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Fisherman's Wharf">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Fisherman's Wharf</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Seafood</span>
+                            <span>Goan</span>
+                            <span>Riverside</span>
+                        </div>
+                        <p class="description">Experience authentic Goan seafood cuisine by the Mandovi River. Famous
+                            for their fresh catch and traditional recipes.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-3000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 6 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Thalassa">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Thalassa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vagator, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Greek</span>
+                            <span>Mediterranean</span>
+                            <span>Beachfront</span>
+                        </div>
+                        <p class="description">Greek restaurant with stunning sunset views. Known for their fresh
+                            Mediterranean cuisine and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹3000-5000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safe">
+        <div class="safety-guide">
+            <h1>Travel Safety Guide</h1>
+            <p>Stay safe during your travels with these essential safety tips.</p>
+            <div class="tips">
+                <div class="tip">
+                    <h2>1. Keep Your Documents Safe</h2>
+                    <p>Make digital copies of your passport, visa, and important documents.</p>
+                </div>
+                <div class="tip">
+                    <h2>2. Stay Aware of Your Surroundings</h2>
+                    <p>Avoid unsafe areas and be cautious of common travel scams.</p>
+                </div>
+                <div class="tip">
+                    <h2>3. Emergency Contacts</h2>
+                    <p>Always have local police, hospital, and embassy contact numbers.</p>
+                </div>
+            </div>
+            <div class="weather-box">
+                <h2>Weather & Seasonal Safety</h2>
+                <p>Knowing Jaipur’s weather conditions helps you plan your trip and pack accordingly for a comfortable
+                    experience.</p>
+                <ul>
+                    <li><strong>Summer (March - June):</strong> Extremely hot, with temperatures soaring between 40°C to
+                        45°C (104°F to 113°F). The dry heat can be intense, so stay hydrated, wear loose cotton
+                        clothing, use sunscreen, and avoid direct sun exposure during peak hours (12 PM - 4 PM).</li>
+                    <li><strong>Monsoon (July - September):</strong> Moderate rainfall provides some relief from the
+                        summer heat, but humidity levels rise. Occasional heavy showers may cause travel disruptions.
+                        Carry an umbrella or raincoat and check the weather forecast before making outdoor plans.</li>
+                    <li><strong>Winter (November - February):</strong> Cool and pleasant, with temperatures ranging from
+                        10°C to 25°C (50°F to 77°F). Evenings and early mornings can be chilly, so carry light woolens
+                        or a jacket.
+
+            </div>
+            <div class="emergency-box">
+                <h2>Emergency Contacts</h2>
+                <ul>
+                    <li><strong>Police:</strong> 112 / 100</li>
+                    <li><strong>Medical Assistance (Ambulance):</strong> 102 / 108</li>
+                    <li><strong>Fire Department:</strong> 101</li>
+                    <li><strong>Women’s Helpline:</strong> 1091</li>
+                    <li><strong>Child Helpline:</strong> 1098</li>
+                    <li><strong>Tourist Helpline:</strong> 1363</li>
+                    <li><strong>Railway Helpline:</strong> 139</li>
+                    <li><strong>Embassy Assistance:</strong> <a href="https://www.embassy-worldwide.com/country/india/"
+                            target="_blank">Find your embassy</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/script_goa.js"></script>
+
+</body>
+
+</html>

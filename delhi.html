@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Delhi</title>
+    <link rel="stylesheet" href="css/styles_goa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="other">
+        <nav class="top-nav">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#monuments">Monuments</a></li>
+                    <li><a href="#temples">Temples</a></li>
+                    <li><a href="#adventure">Adventure</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#safe">SafetyGuide</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Cart Icon and Dropdown -->
+        <div class="cart-container">
+            <div id="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+
+        <header class="delhi-header">
+            <h1>Explore Delhi – The Heart of India!</h1>
+        </header>
+
+        <main class="main-description">
+            <p>Delhi, the capital of India, is a city that perfectly blends rich history with modern urban life. From
+                ancient monuments that narrate tales of the past to vibrant markets and thrilling adventures, Delhi has
+                something for every traveler. Whether you're a history buff, a spiritual seeker, or an adventure
+                enthusiast, this city will leave you mesmerized.</p>
+        </main>
+
+        <!-- Monuments Section -->
+        <section id="monuments" class="culture-section">
+            <h2>Historic Monuments</h2>
+            <div class="culture-item">
+                <img src="images/gate.jpg" alt="India Gate">
+                <div class="text-content">
+                    <h2>India Gate</h2>
+                    <p>India Gate is a war memorial dedicated to soldiers who died in World War I. This iconic structure
+                        stands as a symbol of patriotism and resilience. The evening lights and surrounding gardens make
+                        it a popular spot for tourists and locals alike. The Amar Jawan Jyoti, an eternal flame, burns
+                        here in tribute to the fallen soldiers.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> Open 24 hours</p>
+                    <button class="add-to-cart" data-item="India Gate" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/qutub.jpg" alt="Qutub Minar">
+                <div class="text-content">
+                    <h2>Qutub Minar</h2>
+                    <p>The Qutub Minar, a UNESCO World Heritage Site, is the tallest brick minaret in the world. Built
+                        in the 12th century, it is an architectural masterpiece adorned with intricate carvings and
+                        inscriptions from the Quran. The surrounding Qutub Complex also features several historic
+                        structures, making it a fascinating place to explore.</p>
+                    <p><strong>Cost:</strong> ₹30 (Indian nationals), ₹500 (Foreign tourists)</p>
+                    <p><strong>Timings:</strong> 7:00 AM – 5:00 PM</p>
+                    <button class="add-to-cart" data-item="Qutub Minar" data-cost="30">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/red.jpg" alt="Red Fort">
+                <div class="text-content">
+                    <h2>Red Fort</h2>
+                    <p>The Red Fort is a stunning Mughal fortress built by Shah Jahan. This UNESCO World Heritage Site
+                        is famous for its massive walls, historic museums, and the Independence Day celebrations held
+                        here annually. Inside, visitors can explore the Diwan-i-Aam, Diwan-i-Khas, and the beautiful
+                        gardens.</p>
+                    <p><strong>Cost:</strong> ₹35 (Indian nationals), ₹500 (Foreign tourists)</p>
+                    <p><strong>Timings:</strong> 9:30 AM – 4:30 PM (Closed on Mondays)</p>
+                    <button class="add-to-cart" data-item="Red Fort" data-cost="35">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Temples Section -->
+        <section id="temples" class="culture-section">
+            <h2> Temples</h2>
+            <div class="culture-item">
+                <img src="images/akshar.jpg" alt="Akshardham Temple">
+                <div class="text-content">
+                    <h2>Akshardham Temple</h2>
+                    <p>Akshardham Temple is a magnificent Hindu temple showcasing traditional architecture and cultural
+                        heritage. The mesmerizing water show, detailed sculptures, and spiritual exhibits offer an
+                        immersive experience into India's rich traditions.</p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 10:00 AM – 8:00 PM (Closed on Mondays)</p>
+                    <button class="add-to-cart" data-item="Akshardham Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/lotus.jpg" alt="Lotus Temple">
+                <div class="text-content">
+                    <h2>Lotus Temple</h2>
+                    <p>The Lotus Temple is a Bahá'í House of Worship, renowned for its unique lotus-shaped structure. It
+                        is a peaceful place open to people of all faiths for meditation and prayer. The tranquil
+                        surroundings and beautiful gardens make it an ideal retreat from the city's hustle.</p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 9:00 AM – 5:30 PM (Closed on Mondays)</p>
+                    <button class="add-to-cart" data-item="Lotus Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/delhi_iskon.jpg" alt="ISKCON Temple">
+                <div class="text-content">
+                    <h2>ISKCON Temple</h2>
+                    <p>The ISKCON Temple in Delhi is a vibrant place of worship dedicated to Lord Krishna. It features
+                        mesmerizing spiritual chants, devotional music, and a museum showcasing the life and teachings
+                        of Krishna. The evening aarti is a must-experience event.</p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 4:30 AM – 9:00 PM</p>
+                    <button class="add-to-cart" data-item="ISKCON Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure Section -->
+        <section id="adventure" class="culture-section">
+            <h2>Adventure Activities in Delhi</h2>
+            <div class="culture-item">
+                <img src="images/air.jpg" alt="Hot Air Balloon Ride">
+                <div class="text-content">
+                    <h2>Hot Air Balloon Ride</h2>
+                    <p>Experience breathtaking aerial views of Delhi from a hot air balloon. This adventure activity
+                        offers a serene yet thrilling experience as you float over historical landmarks and cityscapes,
+                        offering a unique perspective of the bustling metropolis.</p>
+                    <p><strong>Cost:</strong> ₹2500 per person (approx.)</p>
+                    <p><strong>Timings:</strong> Early mornings and evenings</p>
+                    <button class="add-to-cart" data-item="Hot Air Balloon Ride" data-cost="2500">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/adventure.jpg" alt="Adventure Park">
+                <div class="text-content">
+                    <h2>Adventure Island</h2>
+                    <p>Adventure Island in Rohini is a theme park offering thrilling rides, water slides, and fun
+                        activities. It’s a perfect place for families and adrenaline seekers, with activities ranging
+                        from roller coasters to zip-lining adventures.</p>
+                    <p><strong>Cost:</strong> ₹500 per person</p>
+                    <p><strong>Timings:</strong> 11:00 AM – 7:00 PM</p>
+                    <button class="add-to-cart" data-item="Adventure Island" data-cost="500">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Background Overlay -->
+            <!-- Background Overlay -->
+            <div id="cart-overlay" class="cart-overlay"></div>
+            <!-- Cart Icon -->
+            <div id="cart-icon">🛒</div>
+            <!-- Cart Dropdown -->
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul> <!-- List of cart items -->
+                <p id="cart-summary"><strong>Total Items:</strong> 0</p> <!-- Total number of items -->
+                <p id="cart-total"><strong>Total Cost:</strong> ₹0.00</p> <!-- Total price -->
+            </div>
+        </section>
+    </section>
+    <!-- Hotels Section -->
+
+
+    <section id="hotels">
+        <div class="cont-hotel">
+            <div class="left-hotel">
+                <h1> Hotels in Delhi</h1>
+                <p>
+                    We have a lot of hotels for you all over Delhi! So what are you waiting for? Book your room now!
+                </p>
+                <p>
+                    We have collaborated with the best hotels in the city to provide you with the best experience at a
+                    very low cost.
+                </p>
+            </div>
+            <div class="right-hotel">
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/leela.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Leela Palace</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹20,000 / night</div>
+                        <div class="description">
+                            A luxurious hotel offering world-class hospitality and fine dining in the heart of Delhi.
+                        </div>
+                        <button class="add-to-cart" data-item="The Leela Palace" data-cost="20000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/tajdel.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Taj Mahal Hotel</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹15,000 / night</div>
+                        <div class="description">
+                            Experience classic luxury and elegance near India Gate.
+                        </div>
+                        <button class="add-to-cart" data-item="Taj Mahal Hotel" data-cost="15000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/imperial.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Imperial</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹12,000 / night</div>
+                        <div class="description">
+                            A heritage hotel with colonial-style architecture and unmatched luxury.
+                        </div>
+                        <button class="add-to-cart" data-item="The Imperial" data-cost="12000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Hotel Hari Piorko.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Hotel Hari Piorko</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹2,250 / night</div>
+                        <div class="description">
+                            Hari Piorko Delhi one of the largest millennial stays in India.
+                        </div>
+                        <button class="add-to-cart" data-item="Hotel Hari Piorko" data-cost="2250">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Bloomrooms.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Bloomrooms</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹3,450 / night</div>
+                        <div class="description">
+                            Close to some of New Delhi's most popular landmarks, such as Hanuman Temple / Statue (1.2
+                            mi) and Gurudwara Bangla Sahib (1.4 mi)
+                        </div>
+                        <button class="add-to-cart" data-item="Bloomrooms" data-cost="3450">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Hotel Cabana.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Hotel Cabana</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹2,550 / night</div>
+                        <div class="description">
+                            Hotel Cabana Pahar Ganj runs a 24-hour front desk to welcome and assist guests. Free Wi-Fi
+                            access is available. The clean, simple and modern air-conditioned rooms here includes a
+                            flat-screen cable TV, air conditioning and a terrace.
+                        </div>
+                        <button class="add-to-cart" data-item="Hotel Cabana" data-cost="2550">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurants" class="restaurant-section">
+        <div class="restaurant-container">
+            <div class="restaurant-header">
+                <h1>Best Restaurants in Goa</h1>
+                <p>Discover the finest dining experiences with authentic Goan cuisine and international flavors</p>
+            </div>
+
+            <div class="restaurant-grid">
+                <!-- Restaurant Card 1 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Martin's Corner">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Martin's Corner</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Betalbatim, South Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Seafood</span>
+                            <span>Indian</span>
+                        </div>
+                        <p class="description">Famous for its authentic Goan cuisine and seafood specialties. Try their
+                            signature prawn curry and fish thali.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹800-1500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 2 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Gunpowder">
+                        <div class="restaurant-rating">4.7 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Gunpowder</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Assagao, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>South Indian</span>
+                            <span>Fusion</span>
+                            <span>Vegetarian</span>
+                        </div>
+                        <p class="description">Known for its innovative South Indian cuisine with a modern twist. Don't
+                            miss their appam and curry.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-2500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 3 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="La Plage">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>La Plage</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ashwem Beach, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>French</span>
+                            <span>Mediterranean</span>
+                            <span>Seafood</span>
+                        </div>
+                        <p class="description">Beachfront dining with French-Mediterranean cuisine. Famous for their
+                            fresh seafood and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹2500-4000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 4 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Viva Panjim">
+                        <div class="restaurant-rating">4.6 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Viva Panjim</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Portuguese</span>
+                            <span>Local</span>
+                        </div>
+                        <p class="description">Traditional Goan restaurant in a heritage house. Famous for their
+                            vindaloo and sorpotel.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹600-1200)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 5 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Fisherman's Wharf">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Fisherman's Wharf</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Seafood</span>
+                            <span>Goan</span>
+                            <span>Riverside</span>
+                        </div>
+                        <p class="description">Experience authentic Goan seafood cuisine by the Mandovi River. Famous
+                            for their fresh catch and traditional recipes.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-3000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 6 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Thalassa">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Thalassa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vagator, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Greek</span>
+                            <span>Mediterranean</span>
+                            <span>Beachfront</span>
+                        </div>
+                        <p class="description">Greek restaurant with stunning sunset views. Known for their fresh
+                            Mediterranean cuisine and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹3000-5000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safe">
+        <div class="safety-guide">
+            <h1>Travel Safety Guide</h1>
+            <p>Stay safe during your travels with these essential safety tips.</p>
+            <div class="tips">
+                <div class="tip">
+                    <h2>1. Keep Your Documents Safe</h2>
+                    <p>Make digital copies of your passport, visa, and important documents.</p>
+                </div>
+                <div class="tip">
+                    <h2>2. Stay Aware of Your Surroundings</h2>
+                    <p>Avoid unsafe areas and be cautious of common travel scams.</p>
+                </div>
+                <div class="tip">
+                    <h2>3. Emergency Contacts</h2>
+                    <p>Always have local police, hospital, and embassy contact numbers.</p>
+                </div>
+            </div>
+            <div class="weather-box">
+                <h2>Weather & Seasonal Safety</h2>
+                <p>Knowing the weather of Delhi helps you pack appropriately and avoid extreme conditions.</p>
+                <ul>
+                    <li><strong>Summer (April - June):</strong> Extremely hot with temperatures reaching 45°C. Stay
+                        hydrated and avoid direct sun exposure.</li>
+                    <li><strong>Monsoon (July - September):</strong> Heavy rainfall leading to possible waterlogging in
+                        some areas.</li>
+                    <li><strong>Winter (November - February):</strong> Cold and foggy with temperatures dropping to 5°C.
+                        Pack warm clothes.</li>
+                </ul>
+            </div>
+            <div class="emergency-box">
+                <h2>Emergency Contacts</h2>
+                <ul>
+                    <li><strong>Police:</strong> 112 / 100</li>
+                    <li><strong>Medical Assistance (Ambulance):</strong> 102 / 108</li>
+                    <li><strong>Fire Department:</strong> 101</li>
+                    <li><strong>Women’s Helpline:</strong> 1091</li>
+                    <li><strong>Child Helpline:</strong> 1098</li>
+                    <li><strong>Tourist Helpline:</strong> 1363</li>
+                    <li><strong>Railway Helpline:</strong> 139</li>
+                    <li><strong>Embassy Assistance:</strong> <a href="https://www.embassy-worldwide.com/country/india/"
+                            target="_blank">Find your embassy</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/script_goa.js"></script>
+</body>
+
+</html>

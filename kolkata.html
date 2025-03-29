@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Kolkata</title>
+    <link rel="stylesheet" href="./css/styles_goa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="other">
+        <nav class="top-nav">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#monuments">Monuments</a></li>
+                    <li><a href="#temples">Temples</a></li>
+                    <li><a href="#adventure">Adventure</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#safe">SafetyGuide</a></li>
+                </ul>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- Cart Icon and Dropdown -->
+        <!-- Cart Icon and Dropdown -->
+        <div class="cart-container">
+            <div id="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+        <header class="kolkata-header">
+            <h1>Explore Kolkata – The City of Joy!</h1>
+        </header>
+
+        <main class="main-description">
+            <p>Kolkata, the cultural capital of India, is a city that beautifully blends colonial charm with modern
+                vibrancy. Known for its rich history, artistic heritage, and literary legacy, Kolkata is home to
+                stunning monuments, grand temples, and thrilling adventure activities. Whether you're a history
+                enthusiast, a spiritual seeker, or an adrenaline junkie, Kolkata has something special for you.</p>
+        </main>
+
+        <!-- Monuments Section -->
+        <section id="monuments" class="culture-section">
+            <h2>Historic Monuments</h2>
+            <div class="culture-item">
+                <img src="images/victoria.jpg" alt="Victoria Memorial">
+                <div class="text-content">
+                    <h2>Victoria Memorial</h2>
+                    <p>The Victoria Memorial is one of Kolkata’s most iconic landmarks, built in memory of Queen
+                        Victoria. This grand marble structure is surrounded by lush gardens and houses an extensive
+                        museum showcasing the colonial history of India. The light and sound show held in the evenings
+                        is a must-watch experience.</p>
+                    <p><strong>Cost:</strong> ₹30 (Indian nationals), ₹500 (Foreign tourists)</p>
+                    <p><strong>Timings:</strong> 10:00 AM – 5:00 PM (Closed on Mondays)</p>
+                    <button class="add-to-cart" data-item="Victoria Memorial" data-cost="30">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/howrah.jpg" alt="Howrah Bridge">
+                <div class="text-content">
+                    <h2>Howrah Bridge</h2>
+                    <p>The Howrah Bridge, an engineering marvel, is one of the busiest cantilever bridges in the world.
+                        Spanning the Hooghly River, this iconic structure connects Kolkata to Howrah and is a lifeline
+                        for the city's daily commuters. The view of the bridge at sunrise or sunset is simply
+                        breathtaking.</p>
+                    <p><strong>Cost:</strong> Free</p>
+                    <p><strong>Timings:</strong> Open 24 hours</p>
+                    <button class="add-to-cart" data-item="Howrah Bridge" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/marble.jpg" alt="Marble Palace">
+                <div class="text-content">
+                    <h2>Marble Palace</h2>
+                    <p>The Marble Palace is a 19th-century mansion famous for its stunning marble architecture and an
+                        extensive collection of artworks, including Western sculptures, paintings, and antique
+                        furniture. It is a hidden gem in the city for art and history lovers.</p>
+                    <p><strong>Cost:</strong> Free (Special permit required)</p>
+                    <p><strong>Timings:</strong> 10:00 AM – 4:00 PM (Closed on Mondays and Thursdays)</p>
+                    <button class="add-to-cart" data-item="Marble Palace" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Temples Section -->
+        <section id="temples" class="culture-section">
+            <h2> Temples</h2>
+            <div class="culture-item">
+                <img src="images/daksh.jpg" alt="Dakshineswar Kali Temple">
+                <div class="text-content">
+                    <h2>Dakshineswar Kali Temple</h2>
+                    <p>One of the most revered temples in Kolkata, Dakshineswar Kali Temple is dedicated to Goddess
+                        Kali. Located on the banks of the Hooghly River, the temple is famous for its beautiful
+                        architecture and spiritual ambiance.</p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 6:00 AM – 8:00 PM</p>
+                    <button class="add-to-cart" data-item="Dakshineswar Kali Temple" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/belur.jpg" alt="Belur Math">
+                <div class="text-content">
+                    <h2>Belur Math</h2>
+                    <p>Founded by Swami Vivekananda, Belur Math is a serene place that promotes interfaith harmony. The
+                        temple’s unique architecture blends Hindu, Islamic, and Christian elements, symbolizing unity
+                        among religions.</p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 6:00 AM – 8:00 PM</p>
+                    <button class="add-to-cart" data-item="Belur Math" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/isckonkol.jpg" alt="ISKCON Kolkata">
+                <div class="text-content">
+                    <h2>ISKCON Kolkata</h2>
+                    <p>The ISKCON Temple in Kolkata is a place of devotion and spirituality dedicated to Lord Krishna.
+                        It offers a peaceful retreat with devotional chants, lectures, and delicious vegetarian meals.
+                    </p>
+                    <p><strong>Entry Fee:</strong> Free</p>
+                    <p><strong>Timings:</strong> 4:30 AM – 9:00 PM</p>
+                    <button class="add-to-cart" data-item="ISKCON Kolkata" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure Section -->
+        <section id="adventure" class="culture-section">
+            <h2>Adventure in Kolkata</h2>
+            <div class="culture-item">
+                <img src="images/sunder.jpg" alt="Sundarbans Safari">
+                <div class="text-content">
+                    <h2>Sundarbans Safari</h2>
+                    <p>Embark on an unforgettable adventure in the Sundarbans, the world's largest mangrove forest. Home
+                        to the majestic Royal Bengal Tiger, this UNESCO World Heritage Site offers thrilling boat
+                        safaris through its dense waterways.</p>
+                    <p><strong>Cost:</strong> ₹3000 per person (approx.)</p>
+                    <p><strong>Timings:</strong> Depends on safari schedule</p>
+                    <button class="add-to-cart" data-item="Sundarbans Safari" data-cost="3000">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item">
+                <img src="images/eco.jpg" alt="Eco Park Adventure">
+                <div class="text-content">
+                    <h2>Eco Park Adventure</h2>
+                    <p>Eco Park offers a variety of adventure activities, including kayaking, zorbing, and cycling. It
+                        is a perfect place for thrill-seekers looking for a mix of nature and excitement.</p>
+                    <p><strong>Cost:</strong> ₹30 (entry), additional charges for activities</p>
+                    <p><strong>Timings:</strong> 12:00 PM – 7:30 PM</p>
+                    <button class="add-to-cart" data-item="Eco Park Adventure" data-cost="30">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Background Overlay -->
+            <div id="cart-overlay" class="cart-overlay"></div>
+            <!-- Cart Icon -->
+            <div id="cart-icon">🛒</div>
+            <!-- Cart Dropdown -->
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul> <!-- List of cart items -->
+                <p id="cart-summary"><strong>Total Items:</strong> 0</p> <!-- Total number of items -->
+                <p id="cart-total"><strong>Total Cost:</strong> ₹0.00</p> <!-- Total price -->
+            </div>
+        </section>
+    </section>
+
+    <!-- Hotels Section -->
+
+    <section id="hotels">
+        <div class="cont-hotel">
+            <div class="left-hotel">
+                <h1> Hotels in Kolkata</h1>
+                <p>
+                    We have a lot of hotels for you all over Kolkata! So what are you waiting for? Book your room now!
+                </p>
+                <p>
+                    We have collaborated with the best hotels in the city to provide you with the best experience at a
+                    very low cost.
+                </p>
+            </div>
+            <div class="right-hotel">
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/grand.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Oberoi Grand, Kolkata</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹11,000 / night</div>
+                        <div class="description">
+                            A luxurious stay with heritage charm and world-class amenities in the heart of Kolkata.
+                        </div>
+                        <button class="add-to-cart" data-item="The Oberoi Grand" data-cost="11000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/royal.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">ITC Royal Bengal</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹10,500 / night</div>
+                        <div class="description">
+                            Experience grandeur and luxury with exquisite hospitality in Kolkata.
+                        </div>
+                        <button class="add-to-cart" data-item="ITC Royal Bengal" data-cost="10500">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/tajben.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Taj Bengal</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹9,500 / night</div>
+                        <div class="description">
+                            A perfect blend of elegance and comfort for a premium stay in Kolkata.
+                        </div>
+                        <button class="add-to-cart" data-item="Taj Bengal" data-cost="9500">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Pride Plaza Hotel Kolkata.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Pride Plaza Hotel Kolkata</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹4,475/ night</div>
+                        <div class="description">
+                            The hotel features a concierge, room service, and 24 hour check-in. Plus, Pride Plaza Hotel
+                            Kolkata offers a rooftop pool and free breakfast, providing a pleasant respite from your
+                            busy day.
+                        </div>
+                        <button class="add-to-cart" data-item="Pride Plaza Hotel Kolkata" data-cost="4475">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Fairfield by Marriott Kolkata.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Fairfield by Marriott Kolkata</div>
+                        <div class="stars">⭐⭐⭐</div>
+                        <div class="price">₹2,500 / night</div>
+                        <div class="description">
+                            Located in New Town, Fairfield by Marriott Kolkata is just a short drive from the Netaji
+                            Subhash Chandra airport
+                        </div>
+                        <button class="add-to-cart" data-item="Fairfield by Marriott Kolkata" data-cost="2500">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="images/Mark Hotel.jpg" alt="Hotel Image">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Mark Hotel</div>
+                        <div class="stars">⭐⭐⭐</div>
+                        <div class="price">₹3,700 / night</div>
+                        <div class="description">
+                            Mark Hotel, a budget friendly hotel that brings the best of Kolkata (Calcutta) to your
+                            doorstep.
+                        </div>
+                        <button class="add-to-cart" data-item="Mark Hotel" data-cost="3700">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurants" class="restaurant-section">
+        <div class="restaurant-container">
+            <div class="restaurant-header">
+                <h1>Best Restaurants in Goa</h1>
+                <p>Discover the finest dining experiences with authentic Goan cuisine and international flavors</p>
+            </div>
+
+            <div class="restaurant-grid">
+                <!-- Restaurant Card 1 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Martin's Corner">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Martin's Corner</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Betalbatim, South Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Seafood</span>
+                            <span>Indian</span>
+                        </div>
+                        <p class="description">Famous for its authentic Goan cuisine and seafood specialties. Try their
+                            signature prawn curry and fish thali.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹800-1500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 2 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Gunpowder">
+                        <div class="restaurant-rating">4.7 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Gunpowder</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Assagao, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>South Indian</span>
+                            <span>Fusion</span>
+                            <span>Vegetarian</span>
+                        </div>
+                        <p class="description">Known for its innovative South Indian cuisine with a modern twist. Don't
+                            miss their appam and curry.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-2500)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 3 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="La Plage">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>La Plage</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ashwem Beach, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>French</span>
+                            <span>Mediterranean</span>
+                            <span>Seafood</span>
+                        </div>
+                        <p class="description">Beachfront dining with French-Mediterranean cuisine. Famous for their
+                            fresh seafood and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹2500-4000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 4 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Viva Panjim">
+                        <div class="restaurant-rating">4.6 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Viva Panjim</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Portuguese</span>
+                            <span>Local</span>
+                        </div>
+                        <p class="description">Traditional Goan restaurant in a heritage house. Famous for their
+                            vindaloo and sorpotel.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹ (₹600-1200)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 5 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Fisherman's Wharf">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Fisherman's Wharf</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Seafood</span>
+                            <span>Goan</span>
+                            <span>Riverside</span>
+                        </div>
+                        <p class="description">Experience authentic Goan seafood cuisine by the Mandovi River. Famous
+                            for their fresh catch and traditional recipes.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹ (₹1500-3000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 6 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Thalassa">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Thalassa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vagator, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Greek</span>
+                            <span>Mediterranean</span>
+                            <span>Beachfront</span>
+                        </div>
+                        <p class="description">Greek restaurant with stunning sunset views. Known for their fresh
+                            Mediterranean cuisine and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹₹₹₹ (₹3000-5000)</span>
+                            <button class="book-table">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="safe">
+        <div class="safety-guide">
+            <h1>Travel Safety Guide</h1>
+            <p>Stay safe during your travels with these essential safety tips.</p>
+            <div class="tips">
+                <div class="tip">
+                    <h2>1. Keep Your Documents Safe</h2>
+                    <p>Make digital copies of your passport, visa, and important documents.</p>
+                </div>
+                <div class="tip">
+                    <h2>2. Stay Aware of Your Surroundings</h2>
+                    <p>Avoid unsafe areas and be cautious of common travel scams.</p>
+                </div>
+                <div class="tip">
+                    <h2>3. Emergency Contacts</h2>
+                    <p>Always have local police, hospital, and embassy contact numbers.</p>
+                </div>
+            </div>
+            <div class="weather-box">
+                <h2>Weather & Seasonal Safety</h2>
+                <p>Knowing Kolkata’s weather conditions helps you plan your trip and pack accordingly for a comfortable
+                    experience.</p>
+                <ul>
+                    <li><strong>Summer (April - June):</strong> Hot and humid, with temperatures ranging from 35°C to
+                        40°C (95°F to 104°F). High humidity levels can make it feel even hotter. Stay hydrated, wear
+                        breathable cotton clothing, and avoid outdoor activities during peak afternoon hours.</li>
+                    <li><strong>Monsoon (July - September):</strong> Heavy rainfall with frequent thunderstorms, leading
+                        to waterlogging and potential travel delays. Carry an umbrella or raincoat, and check the
+                        weather forecast before heading out.</li>
+                    <li><strong>Winter (December - February):</strong> Cool and pleasant, with temperatures ranging from
+                        10°C to 20°C (50°F to 68°F). Mornings and evenings can be chilly, so light woolens or a jacket
+                        may be needed.</li>
+                </ul>
+
+            </div>
+            <div class="emergency-box">
+                <h2>Emergency Contacts</h2>
+                <ul>
+                    <li><strong>Police:</strong> 112 / 100</li>
+                    <li><strong>Medical Assistance (Ambulance):</strong> 102 / 108</li>
+                    <li><strong>Fire Department:</strong> 101</li>
+                    <li><strong>Women’s Helpline:</strong> 1091</li>
+                    <li><strong>Child Helpline:</strong> 1098</li>
+                    <li><strong>Tourist Helpline:</strong> 1363</li>
+                    <li><strong>Railway Helpline:</strong> 139</li>
+                    <li><strong>Embassy Assistance:</strong> <a href="https://www.embassy-worldwide.com/country/india/"
+                            target="_blank">Find your embassy</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/script_goa.js"></script>
+</body>
+
+</html>

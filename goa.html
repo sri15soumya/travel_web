@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Page</title>
+    <link rel="stylesheet" href="./css/styles_goa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="other">
+        <nav class="top-nav">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#temples">Temples</a></li>
+                    <li><a href="#churches">Churches</a></li>
+                    <li><a href="#monuments">Monuments</a></li>
+                    <li><a href="#beaches">Beaches</a></li>
+                    <li><a href="#adventure">Adventure</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#safe">Safety Guide</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Cart Icon and Dropdown -->
+        <div class="cart-container">
+            <div id="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+        <header class="goa-header">
+            <h1>Explore Goa's Rich Culture & Heritage</h1>
+        </header>
+
+        <main class="main-description">
+            <p>Goa offers stunning beaches, vibrant festivals, affordable alcohol, delicious seafood cuisine, lively
+                nightlife, and unique shopping experiences. Visitors can enjoy picturesque sunsets, relax on soft sandy
+                shores, and choose from bustling beaches in North Goa.</p>
+        </main>
+
+        <!-- Temples Section -->
+        <section id="temples" class="culture-section">
+            <h2>Temples</h2>
+            <div class="culture-item">
+                <img src="https://www.gosahin.com/go/p/h/1551600032_mangeshi-temple3.jpg" alt="Mangueshi Temple">
+                <div class="text-content">
+                    <h2>Mangueshi Temple</h2>
+                    <p>Shri Manguesh temple (Devanagari: श्री मंगेश मंदिर) is a Hindu temple located at Mangeshi Village
+                        in Priol, Ponda taluk, Goa. It is at a distance of 1 km from Mardol close to Nagueshi, 21 km
+                        from Panaji, the capital of Goa, and 26 km from Margao. Shree Mangueshi is the Kuldeva (family
+                        deity) of Saraswat Brahmins and other gotras. Shrimad Swamiji of Shri Kavale Math is the
+                        Spiritual Chief of Shri Manguesh Saunsthan, Mangueshi. This temple is one of the largest and
+                        most frequently visited temples in Goa.</p>
+                    <p><strong>Cost:</strong> ₹100 per person</p>
+                    <p><strong>Duration:</strong> 1-2 hours</p>
+                    <button class="add-to-cart" data-item="Mangueshi Temple" data-cost="100">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="https://th.bing.com/th/id/OIP.IwBpo15ocFAnWbrbgsF9fQHaEa?rs=1&pid=ImgDetMain"
+                    alt="Mahadev Temple">
+                <div class="text-content">
+                    <h2>Mahadev Temple</h2>
+                    <p>Mahadeva Temple, Tambdi Surla is a 13th-century Hindu temple in the Kadamba style dedicated to
+                        Lord Shiva, one of the main deities in Hinduism, and is an active place of Hindu worship. It is
+                        an ASI-protected Monument of National Importance in Goa. The temple is dedicated to Lord Shiva
+                        and is reminiscent of the temples at Aihole in neighbouring Karnataka.</p>
+                    <p><strong>Cost:</strong> ₹150 per person</p>
+                    <p><strong>Duration:</strong> 1-2 hours</p>
+                    <button class="add-to-cart" data-item="Mahadev Temple" data-cost="150">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Churches Section -->
+        <section id="churches" class="culture-section">
+            <h2>Churches</h2>
+            <div class="culture-item">
+                <img src="https://www.holidify.com/images/cmsuploads/compressed/pexelsphoto2602998_20200806171104.jpeg"
+                    alt="Se Cathedral">
+                <div class="text-content">
+                    <h2>Se Cathedral</h2>
+                    <p>The word Sé is Portuguese for See. The Se Cathedral was built to commemorate the victory of the
+                        Portuguese under Afonso de Albuquerque over a Muslim army, leading to the capture of the city of
+                        Goa in 1510. Since the day of the victory happened to be on the feast of Saint Catherine, the
+                        cathedral was dedicated to her. It was commissioned by Governor George Cabral to be enlarged in
+                        1552 on the remains of an earlier structure.</p>
+                    <p><strong>Cost:</strong> ₹200 per person</p>
+                    <p><strong>Duration:</strong> 1-2 hours</p>
+                    <button class="add-to-cart" data-item="Se Cathedral" data-cost="200">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monuments Section -->
+        <section id="monuments" class="culture-section">
+            <h2>Monuments</h2>
+            <div class="culture-item">
+                <img src="https://th.bing.com/th/id/OIP.Mrg6juytqTAab1mKsphmIgHaEK?rs=1&pid=ImgDetMain"
+                    alt="Basilica of Bom Jesus">
+                <div class="text-content">
+                    <h2>Basilica of Bom Jesus</h2>
+                    <p>The Basilica of Bom Jesus is a UNESCO World Heritage Site and one of the most famous churches in
+                        Goa. It houses the mortal remains of St. Francis Xavier and is renowned for its Baroque
+                        architecture. The basilica, constructed in 1605, is a prime example of Jesuit architecture and
+                        is one of the oldest churches in India. The interior is adorned with intricate carvings and
+                        gilded altars, making it a must-visit for history and architecture enthusiasts.</p>
+                    <p><strong>Cost:</strong> ₹100 per person</p>
+                    <p><strong>Duration:</strong> 1-2 hours</p>
+                    <button class="add-to-cart" data-item="Basilica of Bom Jesus" data-cost="100">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="https://cdn.thegoavilla.com/static/img/articles/fort-aguada.jpg" alt="Aguda Fort">
+                <div class="text-content">
+                    <h2>Aguada Fort</h2>
+                    <p>Aguada Fort is a well-preserved 17th-century Portuguese fort overlooking the Arabian Sea. It was
+                        built to guard against Dutch and Maratha invaders and features a lighthouse and a freshwater
+                        spring. The fort's strategic location offers panoramic views of the surrounding landscape and
+                        the sea. The lighthouse, one of the oldest in Asia, is a prominent landmark and provides a
+                        glimpse into Goa's maritime history. The fort's massive walls and bastions are a testament to
+                        the architectural prowess of the Portuguese.</p>
+                    <p><strong>Cost:</strong> ₹150 per person</p>
+                    <p><strong>Duration:</strong> 1-2 hours</p>
+                    <button class="add-to-cart" data-item="Aguada Fort" data-cost="150">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beaches Section -->
+        <section id="beaches" class="culture-section">
+            <h2>Beaches</h2>
+            <div class="culture-item">
+                <img src="https://th.bing.com/th/id/OIP.vC6olqfZuvgS7LBWE96qOgHaFj?rs=1&pid=ImgDetMain"
+                    alt="Calangute Beach">
+                <div class="text-content">
+                    <h2>Calangute Beach</h2>
+                    <p>Calangute is the most popular beach with thousands thronging it in both the peak and off-season.
+                        The waves rise high above as you wash away your city blues, though swimmers need to be cautious
+                        because of the sudden drop and the rising waves. Experienced swimmers will, however, revel in
+                        the seas here. The beach is fringed with popular restaurants and hotels, including the Calangute
+                        Residency operated by GTDC. This long, seven-km sweep of sand located 15 km from Panaji is
+                        called the 'Queen of Beaches'.</p>
+                    <p><strong>Cost:</strong> Free entry</p>
+                    <p><strong>Duration:</strong> Flexible</p>
+                    <button class="add-to-cart" data-item="Calangute Beach" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="https://th.bing.com/th/id/OIP.HinxAuQvwYs7CiHlPdl54wHaHa?rs=1&pid=ImgDetMain"
+                    alt="Baga Beach">
+                <div class="text-content">
+                    <h2>Baga Beach</h2>
+                    <p>Baga Beach is a popular beach and tourist destination in North Goa. Baga is located at the north
+                        end of the contiguous beach stretch that starts from Sinquerim, Candolim, leads to Calangute,
+                        and then to Baga. Dolphins can be located at around 1–2 km from the shoreline. The beach
+                        contains rows of shacks and fishing boats, and at high tide, the beach is narrow. The beach is
+                        named after the Baga Creek, which empties into the Arabian Sea at the north end of the beach.
+                    </p>
+                    <p><strong>Cost:</strong> Free entry</p>
+                    <p><strong>Duration:</strong> Flexible</p>
+                    <button class="add-to-cart" data-item="Baga Beach" data-cost="0">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure Section -->
+        <section id="adventure" class="culture-section">
+            <h2>Adventure</h2>
+            <div class="culture-item">
+                <img src="https://www.golokaso.com/wp-content/uploads/2016/10/GG-Lokaso-Blogpost12-Dandeli-River-Rafting-1.jpg"
+                    alt="White Water Rafting">
+                <div class="text-content">
+                    <h2>White Water Rafting</h2>
+                    <p>Known for its serene beaches and vibrant nightlife, Goa also offers exciting river adventures
+                        amidst its lush landscapes. The Mhadei River, one of the most popular spots for white water
+                        rafting in Goa, offers challenging rapids surrounded by the dense forests of the Western Ghats.
+                        This natural setting makes rafting here a perfect blend of excitement and scenic beauty. The
+                        journey through the rapids can be exhilarating, as the strong currents take you through twists
+                        and turns, providing a unique perspective on Goa's lesser-known natural wonders.</p>
+                    <p><strong>Cost:</strong> ₹1500 per person</p>
+                    <p><strong>Duration:</strong> 2-3 hours</p>
+                    <button class="add-to-cart" data-item="White Water Rafting" data-cost="1500">Add to Cart</button>
+                </div>
+            </div>
+            <div class="culture-item alternate">
+                <img src="https://vl-prod-static.b-cdn.net/system/images/000/655/476/d31d984e78691c5541bd5c5662fada20/original/baga_beach.jpg?1685103511"
+                    alt="Paragliding">
+                <div class="text-content">
+                    <h2>Paragliding</h2>
+                    <p>Everybody loves Arambol beach as it is a sight offering the best of both worlds. Not only does it
+                        offer peaceful solitude but also an enjoyable nightlife. It is located in North Goa, a favored
+                        tourist zone among all. Here you will witness a lot of people enjoying adventurous sports, with
+                        paragliding being the most enjoyable. The flight here starts from a cliff located between Harmal
+                        and Arambol beaches. After taking off, you will be mesmerized to witness the view of plains and
+                        mountains that accompanies the long shoreline of the pristine beach.</p>
+                    <p><strong>Cost:</strong> ₹3000 per person</p>
+                    <p><strong>Duration:</strong> 1 hour</p>
+                    <button class="add-to-cart" data-item="Paragliding" data-cost="3000">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Background Overlay -->
+            <div id="cart-overlay" class="cart-overlay"></div>
+            <!-- Cart Popup -->
+            <div id="cart-popup" class="cart-popup">
+                <h3>Your Cart</h3>
+                <ul id="cart-popup-items"></ul>
+                <button id="close-cart-popup">Close</button>
+            </div>
+        </section>
+    </section>
+    <!-- <h1 id="serv-head">Services</h1> -->
+    <section id="hotels">
+        <div class="cont-hotel">
+            <div class="left-hotel">
+                <h1>Luxury Hotels in Goa</h1>
+                <p>
+                    Discover the perfect blend of luxury and comfort in Goa's finest hotels. From beachfront resorts to heritage properties, we offer a curated selection of accommodations that promise an unforgettable stay.
+                </p>
+                <p>
+                    Each hotel is carefully selected to ensure you experience the best of Goan hospitality, stunning views, and world-class amenities at competitive prices.
+                </p>
+            </div>
+            <div class="right-hotel">
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="Taj Exotica Resort">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Taj Exotica Resort & Spa</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹15,000 / night</div>
+                        <div class="description">
+                            Beachfront luxury resort with private beach access, spa, and multiple dining options. Perfect for a romantic getaway.
+                        </div>
+                        <button class="add-to-cart" data-item="Taj Exotica Resort & Spa" data-cost="15000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Grand Hyatt Goa">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Grand Hyatt Goa</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹12,000 / night</div>
+                        <div class="description">
+                            Modern luxury resort with multiple pools, golf course, and award-winning restaurants. Ideal for family vacations.
+                        </div>
+                        <button class="add-to-cart" data-item="Grand Hyatt Goa" data-cost="12000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1582719508461-905c673771fd" alt="The Leela Goa">
+                    <div class="hotel-info">
+                        <div class="hotel-name">The Leela Goa</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹14,000 / night</div>
+                        <div class="description">
+                            Beachfront resort with lagoon views, water sports, and traditional Goan architecture. Perfect for luxury seekers.
+                        </div>
+                        <button class="add-to-cart" data-item="The Leela Goa" data-cost="14000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="W Goa">
+                    <div class="hotel-info">
+                        <div class="hotel-name">W Goa</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹16,000 / night</div>
+                        <div class="description">
+                            Contemporary luxury resort with vibrant nightlife, beach club, and modern amenities. Ideal for young travelers.
+                        </div>
+                        <button class="add-to-cart" data-item="W Goa" data-cost="16000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" alt="ITC Grand Goa">
+                    <div class="hotel-info">
+                        <div class="hotel-name">ITC Grand Goa</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="price">₹13,000 / night</div>
+                        <div class="description">
+                            Luxury resort with wellness center, multiple pools, and gourmet dining. Perfect for health-conscious travelers.
+                        </div>
+                        <button class="add-to-cart" data-item="ITC Grand Goa" data-cost="13000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1582719508461-905c673771fd" alt="Novotel Goa">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Novotel Goa Resort & Spa</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹8,000 / night</div>
+                        <div class="description">
+                            Modern resort with water park, spa, and family-friendly activities. Great for family vacations.
+                        </div>
+                        <button class="add-to-cart" data-item="Novotel Goa Resort & Spa" data-cost="8000">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="Radisson Blu">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Radisson Blu Resort Goa</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹7,500 / night</div>
+                        <div class="description">
+                            Beachfront resort with water sports, kids club, and multiple dining options. Perfect for family getaways.
+                        </div>
+                        <button class="add-to-cart" data-item="Radisson Blu Resort Goa" data-cost="7500">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" alt="Holiday Inn">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Holiday Inn Resort Goa</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹6,500 / night</div>
+                        <div class="description">
+                            Family-friendly resort with water park, kids activities, and beach access. Ideal for budget-conscious families.
+                        </div>
+                        <button class="add-to-cart" data-item="Holiday Inn Resort Goa" data-cost="6500">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img class="hotel-image" src="https://images.unsplash.com/photo-1582719508461-905c673771fd" alt="Kenilworth">
+                    <div class="hotel-info">
+                        <div class="hotel-name">Kenilworth Resort & Spa</div>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <div class="price">₹7,000 / night</div>
+                        <div class="description">
+                            Colonial-style resort with spa, pool, and traditional Goan architecture. Perfect for heritage lovers.
+                        </div>
+                        <button class="add-to-cart" data-item="Kenilworth Resort & Spa" data-cost="7000">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurants" class="restaurant-section">
+        <div class="restaurant-container">
+            <div class="restaurant-header">
+                <h1>Best Restaurants in Goa</h1>
+                <p>Discover the finest dining experiences with authentic Goan cuisine and international flavors</p>
+            </div>
+            
+            <div class="restaurant-grid">
+                <!-- Restaurant Card 1 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Martin's Corner">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Martin's Corner</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Betalbatim, South Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Seafood</span>
+                            <span>Indian</span>
+                        </div>
+                        <p class="description">Famous for its authentic Goan cuisine and seafood specialties. Try their signature prawn curry and fish thali.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹ (800-1500)</span>
+                            <button class="add-to-cart book-table" data-item="Martin's Corner" data-cost="1500">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 2 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" alt="Gunpowder">
+                        <div class="restaurant-rating">4.7 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Gunpowder</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Assagao, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>South Indian</span>
+                            <span>Fusion</span>
+                            <span>Vegetarian</span>
+                        </div>
+                        <p class="description">Known for its innovative South Indian cuisine with a modern twist. Don't miss their appam and curry.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹ (1500-2500)</span>
+                            <button class="add-to-cart book-table" data-item="Gunpowder" data-cost="2500">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 3 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="La Plage">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>La Plage</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ashwem Beach, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>French</span>
+                            <span>Mediterranean</span>
+                            <span>Seafood</span>
+                        </div>
+                        <p class="description">Beachfront dining with French-Mediterranean cuisine. Famous for their fresh seafood and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹ (2500-4000)</span>
+                            <button class="add-to-cart book-table" data-item="La Plage" data-cost="4000">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 4 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Viva Panjim">
+                        <div class="restaurant-rating">4.6 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Viva Panjim</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Goan</span>
+                            <span>Portuguese</span>
+                            <span>Local</span>
+                        </div>
+                        <p class="description">Traditional Goan restaurant in a heritage house. Famous for their vindaloo and sorpotel.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹ (600-1200)</span>
+                            <button class="add-to-cart book-table" data-item="Viva Panjim" data-cost="1200">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 5 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Fisherman's Wharf">
+                        <div class="restaurant-rating">4.8 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Fisherman's Wharf</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Panjim, Central Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Seafood</span>
+                            <span>Goan</span>
+                            <span>Riverside</span>
+                        </div>
+                        <p class="description">Experience authentic Goan seafood cuisine by the Mandovi River. Famous for their fresh catch and traditional recipes.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹ (1500-3000)</span>
+                            <button class="add-to-cart book-table" data-item="Fisherman's Wharf" data-cost="3000">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant Card 6 -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Thalassa">
+                        <div class="restaurant-rating">4.9 ⭐</div>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Thalassa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Vagator, North Goa</p>
+                        <div class="cuisine-tags">
+                            <span>Greek</span>
+                            <span>Mediterranean</span>
+                            <span>Beachfront</span>
+                        </div>
+                        <p class="description">Greek restaurant with stunning sunset views. Known for their fresh Mediterranean cuisine and romantic ambiance.</p>
+                        <div class="restaurant-footer">
+                            <span class="price-range">₹ (3000-5000)</span>
+                            <button class="add-to-cart book-table" data-item="Thalassa" data-cost="5000">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safe">
+        <div class="safety-guide">
+            <h1>Travel Safety Guide</h1>
+            <p>Stay safe during your travels with these essential safety tips.</p>
+
+            <div class="tips">
+                <div class="tip">
+                    <h2>1. Keep Your Documents Safe</h2>
+                    <p>Make digital copies of your passport, visa, and important documents.</p>
+                </div>
+                <div class="tip">
+                    <h2>2. Stay Aware of Your Surroundings</h2>
+                    <p>Avoid unsafe areas and be cautious of common travel scams.</p>
+                </div>
+                <div class="tip">
+                    <h2>3. Emergency Contacts</h2>
+                    <p>Always have local police, hospital, and embassy contact numbers.</p>
+                </div>
+                <div class="tip">
+                    <h2>4. Health & Hygiene Safety</h2>
+                    <p>Drink bottled water, wash hands regularly, and be cautious of street food. Carry essential
+                        medications.</p>
+                </div>
+                <div class="tip">
+                    <h2>5. Stay Connected</h2>
+                    <p>Share your itinerary with family/friends and have a local SIM card or roaming plan for
+                        emergencies.</p>
+                </div>
+                <div class="tip">
+                    <h2>6. Natural Disaster Preparedness</h2>
+                    <p>Check weather conditions before traveling. Know emergency evacuation procedures in your
+                        destination.</p>
+                </div>
+            </div>
+
+            <div class="weather-box">
+                <h2>Weather & Seasonal Safety</h2>
+                <p>Knowing the weather of your destination helps you pack the right clothes and avoid extreme
+                    conditions.</p>
+                <ul>
+                    <li><strong>Summer (June - August):</strong> High temperatures in tropical and desert regions. Stay
+                        hydrated, wear sunscreen, and avoid direct sun exposure.</li>
+                    <li><strong>Monsoon (July - September):</strong> Heavy rains in Southeast Asia and tropical regions.
+                        Be prepared for flight delays and possible flooding.</li>
+                    <li><strong>Winter (December - February):</strong> Cold temperatures in Europe and North America.
+                        Wear layered clothing, check road conditions, and watch out for frostbite.</li>
+                    <li><strong>Spring & Fall:</strong> Ideal for travel in most regions. Pack light layers for
+                        temperature fluctuations.</li>
+                </ul>
+            </div>
+
+            <div class="emergency-box">
+                <h2>Emergency Contacts</h2>
+                <ul>
+                    <li><strong>Police:</strong> 112 / 911</li>
+                    <li><strong>Medical Assistance:</strong> 999 / Local Hospitals</li>
+                    <li><strong>Fire Department:</strong> 101 / 911</li>
+                    <li><strong>Embassy Assistance:</strong> <a href="https://www.embassy-worldwide.com/"
+                            target="_blank">Find your embassy</a></li>
+                </ul>
+            </div>
+
+            <div class="advice">
+                <h2>Additional Travel Safety Advice</h2>
+                <p>✔ Always lock your hotel room and avoid displaying valuables in public.</p>
+                <p>✔ Learn basic phrases in the local language to communicate in emergencies.</p>
+                <p>✔ Register your trip with your country's embassy for alerts and safety updates.</p>
+                <p>✔ Avoid political gatherings or protests, as they can quickly become unsafe.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Load GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/script_goa.js"></script>
+
+</body>
+
+</html>
