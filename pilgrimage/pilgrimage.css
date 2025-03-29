@@ -1,0 +1,234 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  text-align: center;
+}
+
+#services-modal {
+  display: none;
+}
+
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #003161 20%, #004B58 50%, #006A67 100%);
+  color: white;
+  padding: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+  border-bottom: 4px solid rgba(255, 255, 255, 0.2); /* Elegant border bottom */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+  text-align: center;
+}
+
+
+/* Container for Cards */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Grid for Places */
+.places-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+}
+
+/* Individual Card */
+.place-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 95, 86, 0.3);
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 95, 86, 0.5);
+}
+
+.place-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(to right, #005f56, #00796b);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #004d42, #00695c);
+}
+
+/* ========== Modal Background (Glassmorphism) ========== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 47, 44, 0.6); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ========== Modal Content ========== */
+.modal-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  /* box-shadow: 0 4px 12px rgba(0, 95, 86, 0.4); */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: popUp 0.3s ease-in-out;
+}
+
+/* Modal Background */
+.modal-content {
+  background: rgba(0, 49, 97, 0.6); /* Translucent blue */
+  backdrop-filter: blur(12px); /* Soft blur for glass effect */
+  border-radius: 15px;
+  padding: 20px;
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Service List Items */
+#modal-services li {
+  background: rgba(255, 255, 255, 0.2); /* Keeping service buttons slightly transparent */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+#modal-services li:hover {
+  background: rgba(255, 255, 255, 0.4); /* Slightly darker on hover */
+  color: #ffcc00; /* Golden highlight */
+}
+
+
+/* ========== Modal Title ========== */
+.modal-content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color:white;
+  text-transform: uppercase;
+}
+
+/* ========== Close Button ========== */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ff6666;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* ========== Services List ========== */
+#modal-services {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#modal-services li {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Hover Effect on Service Items */
+#modal-services li:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+/* Service Icons */
+.service-icon {
+  font-size: 22px;
+  margin-right: 8px;
+}
+
+/* ========== Animations ========== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes popUp {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
+}
+.join-now {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00695c; /* Matching the View Services button */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.join-now:hover {
+  background-color: #004d40; /* Darker shade on hover */
+}
