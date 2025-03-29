@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9FAFB;
+    padding: 2rem;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: white;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #101828;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.user-menu:hover {
+    background-color: #F9FAFB;
+}
+
+.nav-profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#nav-username {
+    color: #101828;
+    font-weight: 500;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(16, 24, 40, 0.1);
+    min-width: 200px;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s;
+}
+
+.user-menu:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #344054;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #F9FAFB;
+}
+
+.dropdown-menu i {
+    color: #667085;
+    width: 16px;
+}
+
+/* Invoice Container Styles */
+.invoice-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 80px auto 2rem;
+    padding: 0 2rem;
+}
+
+/* Profile Card Styles */
+.profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1);
+    padding: 1.5rem;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-title h2 {
+    color: #101828;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.badge {
+    background: #F9F5FF;
+    color: #7F56D9;
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.info-item i {
+    color: #7F56D9;
+    font-size: 1.25rem;
+    width: 24px;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content label {
+    display: block;
+    color: #667085;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.info-content span {
+    color: #101828;
+    font-size: 0.875rem;
+}
+
+/* Invoice Details Styles */
+.invoice-details {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1);
+    padding: 2rem;
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.invoice-header h1 {
+    color: #101828;
+    font-size: 1.5rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-badge.paid {
+    background: #ECFDF3;
+    color: #027A48;
+}
+
+.payment-status {
+    background: #F9FAFB;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #027A48;
+    margin-bottom: 2rem;
+}
+
+.payment-status i {
+    color: #12B76A;
+}
+
+.invoice-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.info-col label {
+    display: block;
+    color: #667085;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-col strong {
+    display: block;
+    color: #101828;
+    margin-bottom: 0.25rem;
+}
+
+.info-col p {
+    color: #667085;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.subscription-info {
+    margin-bottom: 2rem;
+}
+
+.subscription-info label {
+    display: block;
+    color: #667085;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.plan-details {
+    color: #101828;
+    font-weight: 500;
+}
+
+.invoice-items {
+    margin-bottom: 2rem;
+}
+
+.invoice-items h3 {
+    color: #101828;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+th {
+    text-align: left;
+    padding: 0.75rem;
+    color: #667085;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: #F9FAFB;
+    border-bottom: 1px solid #EAECF0;
+}
+
+td {
+    padding: 1rem 0.75rem;
+    color: #101828;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #EAECF0;
+}
+
+.invoice-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.invoice-total span {
+    color: #667085;
+}
+
+.invoice-total strong {
+    color: #101828;
+    font-size: 1.25rem;
+}
+
+.invoice-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-download, .btn-unpaid {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-download {
+    background: #7F56D9;
+    color: white;
+    border: none;
+}
+
+.btn-download:hover {
+    background: #6941C6;
+}
+
+.btn-unpaid {
+    background: white;
+    color: #344054;
+    border: 1px solid #D0D5DD;
+}
+
+.btn-unpaid:hover {
+    background: #F9FAFB;
+    border-color: #667085;
+}
+
+@media (max-width: 1024px) {
+    .invoice-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .profile-card {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+} 
