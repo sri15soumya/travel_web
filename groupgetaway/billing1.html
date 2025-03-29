@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing - Group Getaways</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="groupgetaway.css">
+    <style>
+        .billing-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .billing-header {
+            text-align: center;
+            
+            margin-bottom: 30px;
+        }
+
+        .billing-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .billing-section {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+        }
+
+        .payment-method {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-method:hover {
+            background: #f0f0f0;
+        }
+
+        .payment-method.selected {
+            border-color: var(--primary);
+            background: #f0f8ff;
+        }
+
+        #qr-code {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #qr-code img {
+            max-width: 200px;
+        }
+
+        .proceed-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .proceed-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50%) translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="billing-container">
+        <div class="billing-header">
+            <h1>Checkout</h1>
+            <p>Complete your booking</p>
+        </div>
+
+        <div class="billing-sections">
+            <div class="billing-section">
+                <h2>Order Summary</h2>
+                <div id="cart-summary" class="cart-summary">
+                    <!-- Cart items will be populated here -->
+                </div>
+                <div class="total-section">
+                    <h3>Total Amount: <span id="total-amount">₹0</span></h3>
+                </div>
+            </div>
+
+            <div class="billing-section">
+                <h2>Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="payment-method" onclick="selectPaymentMethod('upi')">
+                        <i class="fas fa-mobile-alt"></i> UPI Payment
+                    </div>
+                    <div class="payment-method" onclick="selectPaymentMethod('card')">
+                        <i class="fas fa-credit-card"></i> Credit/Debit Card
+                    </div>
+                    <div class="payment-method" onclick="selectPaymentMethod('netbanking')">
+                        <i class="fas fa-university"></i> Net Banking
+                    </div>
+                </div>
+
+                <div id="qr-code">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Code">
+                    <p>Scan to pay</p>
+                </div>
+
+                <button class="proceed-btn" onclick="processPayment()">
+                    <i class="fas fa-lock"></i> Proceed to Pay
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="billing.js"></script>
+</body>
+</html> 

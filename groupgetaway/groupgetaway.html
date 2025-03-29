@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Getaways - Find Your Travel Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="groupgetaway.css">
+</head>
+<body>
+    <!-- Cart Icon and Dropdown -->
+    <div class="cart-container">
+        <div id="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div id="cart-dropdown">
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button id="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="grp_travel-3.jpg" class="d-block w-100" alt="Group Travel">
+                <div class="carousel-caption">
+                    <h1>Find Your Perfect Travel Group</h1>
+                    <p>Connect with like-minded travelers for unforgettable adventures</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="grp_travel-1.jpg" class="d-block w-100" alt="Group Travel">
+                <div class="carousel-caption">
+                    <h1>Explore Together</h1>
+                    <p>Share experiences and make lifelong friends</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="grp_travel-2.jpg" class="d-block w-100" alt="Group Travel">
+                <div class="carousel-caption">
+                    <h1>Adventure Awaits</h1>
+                    <p>Discover new destinations with your perfect travel companions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 main-heading">Find Your Travel Group</h1>
+        
+        <section id="group-getaways" class="search-section p-4 rounded shadow">
+            <h2 class="text-center mb-4 section-heading">Search for a Group</h2>
+            
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">Age Group:</label>
+                    <select id="ageGroup" class="form-select">
+                        <option value="all">All Ages</option>
+                        <option value="18-25">18-25</option>
+                        <option value="26-35">26-35</option>
+                        <option value="36-45">36-45</option>
+                        <option value="46+">46+</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-3">
+                    <label class="form-label">Gender:</label>
+                    <select id="gender" class="form-select">
+                        <option value="all">All Genders</option>
+                        <option value="male">Male Only</option>
+                        <option value="female">Female Only</option>
+                        <option value="mixed">Mixed Group</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-3 d-flex align-items-end">
+                    <button onclick="fetchPackages()" class="btn btn-primary w-100 search-btn">
+                        <i class="fas fa-search me-2"></i>Search Groups
+                    </button>
+                </div>
+            </div>
+            
+            <div id="results" class="mt-4 row g-4 justify-content-center"></div>
+        </section>
+    </div>
+
+    <!-- Detailed View Modal -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content detailed-view">
+            <span class="close-btn" onclick="closeDetailsModal()">&times;</span>
+            <div id="detailed-content" class="p-4"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="groupgetaway.js"></script>
+</body>
+</html>
